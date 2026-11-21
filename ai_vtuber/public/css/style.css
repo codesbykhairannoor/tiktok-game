@@ -1,0 +1,681 @@
+/* ===================================================================
+   AI VTUBER PASTEL ANIME OVERLAY - RESPONSIVE 9:16 (1080 x 1920)
+   =================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #161026;
+    font-family: 'Nunito', 'Quicksand', -apple-system, sans-serif;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+#stage-viewport {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#vtuber-stage {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+    flex-shrink: 0;
+    transform-origin: center center;
+    background: linear-gradient(180deg, #e9d5ff 0%, #fbcfe8 100%);
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
+}
+
+/* Audio Unlock Banner */
+.audio-unlock-overlay {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99999;
+    cursor: pointer;
+}
+
+.audio-unlock-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #ec4899, #8b5cf6);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 9999px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    box-shadow: 0 10px 30px rgba(236, 72, 153, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    animation: pulsePill 2s infinite ease-in-out;
+}
+
+@keyframes pulsePill {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ===================================================================
+   1. PASTEL ANIME GAMER ROOM BACKGROUND
+   =================================================================== */
+.room-background {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.room-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: brightness(1.02) saturate(1.06);
+}
+
+.room-soft-vignette {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(35, 18, 62, 0.18) 0%,
+            rgba(255, 240, 248, 0.0) 35%,
+            rgba(25, 15, 45, 0.12) 75%,
+            rgba(20, 12, 38, 0.55) 100%);
+}
+
+.floating-petal {
+    position: absolute;
+    font-size: 28px;
+    animation: petalFall 10s linear infinite;
+    opacity: 0.85;
+    filter: drop-shadow(0 4px 8px rgba(236, 72, 153, 0.4));
+}
+
+.petal-1 {
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.petal-2 {
+    left: 38%;
+    animation-delay: 3.2s;
+    font-size: 22px;
+}
+
+.petal-3 {
+    left: 68%;
+    animation-delay: 5.5s;
+    font-size: 24px;
+}
+
+.petal-4 {
+    left: 85%;
+    animation-delay: 1.8s;
+    font-size: 20px;
+}
+
+@keyframes petalFall {
+    0% {
+        transform: translateY(-60px) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.9;
+    }
+
+    85% {
+        opacity: 0.85;
+    }
+
+    100% {
+        transform: translateY(1500px) translateX(80px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ===================================================================
+   2. TOP HUD: Pastel Glassmorphic Widgets
+   =================================================================== */
+.hud-top-left {
+    position: absolute;
+    top: 56px;
+    left: 38px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 20;
+}
+
+.goal-widget {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(34, 22, 58, 0.72);
+    border: 2px solid rgba(244, 114, 182, 0.55);
+    backdrop-filter: blur(16px);
+    border-radius: 42px 22px 22px 42px;
+    padding: 10px 20px 10px 10px;
+    box-shadow: 0 12px 30px rgba(30, 14, 54, 0.35);
+}
+
+.goal-circle {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f472b6, #a855f7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    color: #ffffff;
+    box-shadow: 0 0 18px rgba(244, 114, 182, 0.65);
+}
+
+.goal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 215px;
+}
+
+.goal-label {
+    font-size: 15px;
+    font-weight: 800;
+    color: #fce7f3;
+}
+
+.goal-bar-bg {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.goal-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f472b6, #c084fc);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.goal-stats {
+    font-size: 13px;
+    font-weight: 700;
+    color: #e9d5ff;
+}
+
+.heart-rate-widget {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(34, 22, 58, 0.72);
+    border: 2px solid rgba(251, 113, 133, 0.55);
+    backdrop-filter: blur(16px);
+    border-radius: 22px;
+    padding: 8px 18px;
+    box-shadow: 0 10px 28px rgba(30, 14, 54, 0.32);
+    width: 245px;
+}
+
+.heart-emoji {
+    font-size: 28px;
+    display: inline-block;
+    animation: heartBeat 0.85s infinite;
+}
+
+@keyframes heartBeat {
+
+    0%,
+    30%,
+    60%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.24);
+    }
+
+    45% {
+        transform: scale(1.16);
+    }
+}
+
+.heart-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.heart-tag {
+    font-size: 11px;
+    font-weight: 800;
+    color: #fbcfe8;
+    letter-spacing: 1px;
+}
+
+.heart-val-row {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.heart-bpm {
+    font-size: 26px;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(244, 63, 94, 0.75);
+}
+
+.heart-unit {
+    font-size: 13px;
+    font-weight: 800;
+    color: #fda4af;
+}
+
+/* ===================================================================
+   3. TOP RIGHT HUD
+   =================================================================== */
+.hud-top-right {
+    position: absolute;
+    top: 56px;
+    right: 38px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 14px;
+    z-index: 20;
+}
+
+.timer-widget {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(34, 22, 58, 0.72);
+    border: 2px solid rgba(192, 132, 252, 0.55);
+    backdrop-filter: blur(16px);
+    border-radius: 18px;
+    padding: 8px 18px;
+    box-shadow: 0 10px 25px rgba(30, 14, 54, 0.3);
+}
+
+.timer-icon {
+    font-size: 20px;
+}
+
+.timer-digits {
+    font-family: 'Quicksand', monospace;
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.gauge-widget {
+    background: rgba(34, 22, 58, 0.72);
+    border: 2px solid rgba(125, 211, 252, 0.55);
+    backdrop-filter: blur(16px);
+    border-radius: 18px;
+    padding: 10px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 114px;
+    box-shadow: 0 10px 25px rgba(30, 14, 54, 0.3);
+}
+
+.gauge-arc {
+    width: 70px;
+    height: 35px;
+    border-radius: 35px 35px 0 0;
+    border: 6px solid #7dd3fc;
+    border-bottom: none;
+    position: relative;
+}
+
+.gauge-needle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    height: 28px;
+    background: #f472b6;
+    transform-origin: bottom center;
+    transform: rotate(45deg);
+    border-radius: 4px;
+}
+
+.gauge-val {
+    font-size: 16px;
+    font-weight: 900;
+    color: #bae6fd;
+    margin-top: 4px;
+}
+
+.gauge-sub {
+    font-size: 10px;
+    font-weight: 800;
+    color: #e9d5ff;
+    letter-spacing: 0.8px;
+}
+
+/* ===================================================================
+   4. VTUBER 3D AVATAR STAGE (Fokus Tengah Bening & Proporsional)
+   =================================================================== */
+.avatar-stage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1080px;
+    height: 1920px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+}
+
+#vrm-canvas {
+    width: 1080px;
+    height: 1920px;
+    filter: drop-shadow(0 14px 28px rgba(36, 16, 62, 0.35));
+    display: block;
+}
+
+.live2d-loading {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(34, 22, 58, 0.85);
+    border: 2px solid #f472b6;
+    border-radius: 22px;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #fce7f3;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 25px rgba(244, 114, 182, 0.45);
+}
+
+.live2d-spinner {
+    font-size: 24px;
+    animation: spinPetal 2s linear infinite;
+}
+
+@keyframes spinPetal {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.vtube-hint {
+    position: absolute;
+    bottom: 60px;
+    background: rgba(88, 101, 242, 0.45);
+    border: 1px solid rgba(199, 210, 254, 0.6);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #eef2ff;
+}
+
+/* ===================================================================
+   5. SAWERIA / GIFT POPUP ALERT
+   =================================================================== */
+.donation-toast {
+    position: absolute;
+    top: 215px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 720px;
+    z-index: 40;
+    animation: toastDrop 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes toastDrop {
+    0% {
+        transform: translateX(-50%) translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+.dtoast-content {
+    background: linear-gradient(135deg, #f59e0b, #ec4899);
+    border: 4px solid #fef08a;
+    border-radius: 28px;
+    padding: 18px 26px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 20px 50px rgba(236, 72, 153, 0.45), 0 0 35px rgba(254, 240, 138, 0.55);
+}
+
+.dtoast-icon {
+    font-size: 48px;
+}
+
+.dtoast-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dtoast-title {
+    font-size: 15px;
+    font-weight: 900;
+    color: #fef08a;
+    letter-spacing: 1px;
+}
+
+.dtoast-desc {
+    font-size: 24px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.dtoast-msg {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fffbeb;
+    font-style: italic;
+}
+
+/* ===================================================================
+   6. LIVE CHAT TICKER FEED (Kiri Bawah, Rapi Tanpa Menutup Wajah)
+   =================================================================== */
+.chat-ticker-container {
+    position: absolute;
+    bottom: 340px;
+    left: 38px;
+    width: 560px;
+    max-height: 360px;
+    overflow: hidden;
+    z-index: 25;
+    pointer-events: none;
+}
+
+.chat-feed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.chat-bubble-item {
+    background: rgba(34, 22, 58, 0.72);
+    border: 1.5px solid rgba(244, 114, 182, 0.35);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 9px 16px;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    width: fit-content;
+    max-width: 540px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    animation: chatSlideIn 0.28s ease;
+}
+
+@keyframes chatSlideIn {
+    0% {
+        transform: translateY(16px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.chat-sender {
+    font-size: 15px;
+    font-weight: 900;
+    color: #f9a8d4;
+    white-space: nowrap;
+}
+
+.chat-comment {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    word-break: break-word;
+}
+
+/* ===================================================================
+   7. DIALOGUE / SUBTITLE BUBBLE (Area Bawah, Bacaan Jelas!)
+   =================================================================== */
+.speech-dialogue-wrap {
+    position: absolute;
+    bottom: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 960px;
+    z-index: 35;
+    animation: bubblePop 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes bubblePop {
+    0% {
+        transform: translateX(-50%) scale(0.9);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.dialogue-card {
+    background: linear-gradient(135deg, rgba(46, 26, 76, 0.92), rgba(28, 16, 48, 0.94));
+    border: 3px solid #f472b6;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.55), 0 0 28px rgba(244, 114, 182, 0.45);
+    border-radius: 26px;
+    padding: 20px 30px;
+    backdrop-filter: blur(18px);
+}
+
+.speaker-tag {
+    font-size: 19px;
+    font-weight: 900;
+    color: #f9a8d4;
+    margin-bottom: 6px;
+}
+
+.dialogue-text {
+    font-size: 25px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.38;
+}
+
+/* ===================================================================
+   8. COMPACT BOTTOM NOTICE BAR (Rapi di Paling Bawah)
+   =================================================================== */
+.notice-card-container {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30;
+    width: 980px;
+    display: flex;
+    justify-content: center;
+}
+
+.notice-card {
+    background: rgba(24, 16, 44, 0.82);
+    border: 2px solid rgba(192, 132, 252, 0.5);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 9999px;
+    padding: 12px 26px;
+    backdrop-filter: blur(14px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    white-space: nowrap;
+}
+
+.notice-badge {
+    background: linear-gradient(135deg, #ec4899, #8b5cf6);
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.notice-sep {
+    color: rgba(255, 255, 255, 0.35);
+    font-weight: 900;
+}
+
+.notice-line {
+    font-size: 15px;
+    font-weight: 800;
+    color: #f1f5f9;
+}
+
+.notice-line.alert {
+    color: #fda4af;
+}

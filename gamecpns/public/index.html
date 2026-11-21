@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIU Matematika CPNS 2026 - TikTok Live Interactive</title>
+    <!-- GOOGLE FONTS MODERN (PLUS JAKARTA SANS, POPPINS, JETBRAINS MONO) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Poppins:wght@700;800;900&family=JetBrains+Mono:wght@700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css?v=16">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+
+    <!-- NOTIFIKASI TOAST MELAYANG -->
+    <div id="toast-container"></div>
+
+    <div class="stage-wrapper">
+
+        <!-- 9:16 VERTICAL BROADCAST CANVAS (1080 x 1920) -->
+        <div id="portrait-canvas">
+
+            <!-- TIKTOK LIVE SAFE TOP ZONE (GRADIENT HEADER) -->
+            <div class="tiktok-safe-top-zone"></div>
+
+            <!-- DANMU PELURU ANIMASI JAWABAN -->
+            <div id="danmu-layer"></div>
+
+            <!-- FLOATING HEARTS DARI LIKES -->
+            <div id="hearts-layer"></div>
+
+            <!-- VIP SULTAN DONATUR ALERT POPUP (HIDDEN DEFAULT) -->
+            <div id="vip-banner-overlay">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                    <span style="font-size: 38px;">🎁</span>
+                    <div>
+                        <div style="font-size: 13px; font-weight: 800; letter-spacing: 0.8px; color: #fef3c7;">SULTAN
+                            DONATUR LIVE</div>
+                        <div style="font-size: 20px; font-weight: 900;" id="vip-banner-title">@Sultan mengirim Gift!
+                        </div>
+                    </div>
+                </div>
+                <div style="background: rgba(0,0,0,0.3); padding: 7px 16px; border-radius: 12px; font-weight: 800; font-size: 15px; border: 1.5px solid rgba(255,255,255,0.4);"
+                    id="vip-banner-action">
+                    🌹 Bantuan Aktif!
+                </div>
+            </div>
+
+            <!-- TOMBOL UNLOCK AUDIO MANUAL JIKA OBS MEMERLUKAN -->
+            <div id="audio-unlock-overlay" onclick="unlockAudioDirect()">
+                <span>🔊</span>
+                <span>Klik Aktifkan Suara</span>
+            </div>
+
+            <!-- CONFETTI CELEBRATION CANVAS -->
+            <canvas id="confetti-canvas"></canvas>
+
+            <!-- 🚨 CLOSING 3 SOAL TERAKHIR / 5 MENIT BANNER -->
+            <div id="closing-banner-overlay">
+                <span style="font-size: 28px;">🚨</span>
+                <span id="closing-banner-text">BABAK PENUTUPAN: 3 SOAL TERAKHIR HARI INI!</span>
+            </div>
+
+            <!-- 🏆 GRAND FINALE PODIUM CEREMONY (PENUTUPAN RESMI) -->
+            <div id="grand-finale-overlay">
+                <div class="finale-trophy">🏆</div>
+                <h2 class="finale-title">SIMULASI SKD CPNS HARI INI SELESAI!</h2>
+                <p class="finale-sub">Terima kasih atas perjuangan dan antusiasme luar biasa kalian hari ini! 👏</p>
+                
+                <div class="finale-podium-card" id="finale-podium-list">
+                    <!-- Rendered dynamically -->
+                </div>
+
+                <div class="finale-cta-box">
+                    <h3>🔔 FOLLOW @spillsabi.id UNTUK JADWAL LIVE BERIKUTNYA!</h3>
+                    <p>Latihan soal TIU Matematika & Berhitung Cepat CAT BKN setiap hari! Sampai jumpa besok! 👋</p>
+                </div>
+            </div>
+
+            <!-- 1. HEADER KUIS CPNS (BERSIH & RESMI TANPA CLUTTER) -->
+            <header class="live-quiz-header">
+                <div class="header-title-box">
+                    <div class="logo-emblem">∑</div>
+                    <div class="title-text">
+                        <h1>SIMULASI CAT SKD CPNS 2026</h1>
+                    </div>
+                </div>
+                <div class="header-badges-right">
+                    <div class="cat-live-pill">TIU BERHITUNG CEPAT</div>
+                </div>
+            </header>
+
+            <!-- 2. SLIM COUNTDOWN TIME BAR (GARIS WAKTU KECIL) -->
+            <div class="quiz-timer-strip" id="timer-box">
+                <div class="timer-meta-row">
+                    <div class="timer-countdown-info">
+                        <span id="timer-label-text">⏱️ SISA WAKTU:</span>
+                        <strong id="timer-text">45s</strong>
+                    </div>
+                    <div class="timer-round-pill">
+                        <span id="cat-label">BERHITUNG</span> • <strong id="round-number">SOAL #1</strong>
+                    </div>
+                </div>
+                <div class="timer-progress-track">
+                    <div class="timer-progress-fill" id="timer-progress-fill"></div>
+                </div>
+            </div>
+
+            <!-- 3. KARTU SOAL MATEMATIKA UTAMA -->
+            <main class="math-card">
+                <div class="math-meta-row">
+                    <span class="math-badge" id="badge-soal-type">TIU - HITUNG CEPAT</span>
+                    <div class="participants-pill">
+                        <span>👥</span>
+                        <span id="vote-count-label">0 Komen Menjawab</span>
+                    </div>
+                </div>
+
+                <div class="math-question-body" id="question-text">
+                    Menyiapkan soal matematika CPNS...
+                </div>
+
+                <!-- PILIHAN A, B, C, D, E -->
+                <div class="math-options-list" id="options-container">
+                    <!-- Digenerate oleh game-client.js -->
+                </div>
+
+                <!-- PEMBAHASAN RESMI & PODIUM KILAT (REVEAL) -->
+                <div class="math-solution-card" id="solution-box">
+                    <div class="solution-top">
+                        <div class="solution-title-text" id="sol-correct-title">🎉 Kunci Jawaban: [ C ]</div>
+                        <div class="solution-ratio-tag" id="sol-ratio-tag">✅ 12 Benar • ❌ 4 Salah</div>
+                    </div>
+                    <div class="mvp-winner-badge" id="mvp-winner-badge" style="display: none;">
+                        👑 JUARA KILAT: @Peserta (0.8s)
+                    </div>
+                    <div class="speed-podium-grid" id="speed-podium-grid"></div>
+                    <div class="solution-explanation-text" id="solution-desc"></div>
+                </div>
+            </main>
+
+            <!-- 5. LIVE ACTION RUNNING TICKER -->
+            <div class="live-action-ticker">
+                <div class="ticker-badge">⚡ LIVE FEED</div>
+                <div class="ticker-track">
+                    <div class="ticker-content" id="ticker-content">
+                        <span>🔥 Simulasi Tryout Resmi CAT SKD CPNS 2026</span>
+                        <span>💡 Ketik A, B, C, D, atau E di komentar live TikTok untuk menjawab!</span>
+                        <span>⚡ 100% Murni Prestasi & Kecepatan: Jawaban Benar +10 Poin • Kilat (&lt;3s) Bonus s/d +35
+                            Poin!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. ROTATING COMPACT LEADERBOARD (SAFE ZONE DI ATAS CHAT) -->
+            <div class="compact-lb-card">
+                <div class="compact-lb-header">
+                    <div style="display: flex; gap: 8px;">
+                        <button id="tab-btn-academic" class="tab-lb-btn active" onclick="switchLbTab('academic')">🏆
+                            SKOR MURNI</button>
+                        <button id="tab-btn-sultan" class="tab-lb-btn" onclick="switchLbTab('sultan')">👑 TOP
+                            SULTAN</button>
+                    </div>
+                    <span id="lb-badge-label"
+                        style="font-size: 18px; color: var(--text-muted); font-weight: 800;">PRESTASI SKD</span>
+                </div>
+                <!-- Papan Prestasi Murni -->
+                <div class="leaderboard-items" id="leaderboard-container">
+                    <div
+                        style="font-size: 20px; color: var(--text-muted); padding: 12px; line-height: 1.4; text-align: center;">
+                        Ketik <strong>A, B, C, D, atau E</strong> di komentar live untuk mulai kumpulkan poin!
+                    </div>
+                </div>
+                <!-- Papan Sultan Donatur -->
+                <div class="leaderboard-items" id="sultan-leaderboard-container" style="display: none;">
+                    <div
+                        style="font-size: 20px; color: var(--text-muted); padding: 12px; line-height: 1.4; text-align: center;">
+                        Apresiasi penonton setia & donatur pendukung siaran live kuis CPNS!
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. TIKTOK LIVE INTERACTION DOCK (100% MURNI PRESTASI & ADIL - NO PAY TO WIN) -->
+            <div class="tiktok-chat-dock">
+                <div class="dock-cta-title">
+                    <span>👇</span>
+                    <span>KETIK A, B, C, D, ATAU E DI CHAT LIVE TIKTOK</span>
+                    <span>👇</span>
+                </div>
+                <div class="dock-gift-row">
+                    <span class="dock-chip rule">⚡ Jawaban Benar: <strong>+10 Pts</strong></span>
+                    <span class="dock-chip speed">🚀 Kilat (&lt;3s): <strong>Bonus s/d +35 Pts</strong></span>
+                    <span class="dock-chip fair">🎯 <strong>100% Murni Prestasi Akademis</strong></span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MODULAR SCRIPTS (CLEAN CODE) -->
+    <script src="/js/audio.js?v=18"></script>
+    <script src="/js/confetti.js?v=18"></script>
+    <script src="/js/game-client.js?v=18"></script>
+</body>
+
+</html>

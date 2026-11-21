@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamer Control Room - Kuis Cerdas Cermat Anak SD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="/socket.io/socket.io.js"></script>
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --card-bg: #151d30;
+            --border: #24324f;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            padding: 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .dashboard-container {
+            width: 100%;
+            max-width: 1250px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Disconnect Emergency Alert Banner */
+        .disconnect-alert-banner {
+            background: linear-gradient(135deg, #7f1d1d 0%, #b91c1c 100%);
+            border: 2px solid #ef4444;
+            border-radius: 16px;
+            padding: 16px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            box-shadow: 0 0 30px rgba(239, 68, 68, 0.4);
+            animation: pulseBanner 1.5s infinite alternate;
+        }
+
+        @keyframes pulseBanner {
+            0% {
+                border-color: #ef4444;
+                box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+            }
+
+            100% {
+                border-color: #fca5a5;
+                box-shadow: 0 0 35px rgba(239, 68, 68, 0.6);
+            }
+        }
+
+        .dab-content {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .dab-icon {
+            font-size: 32px;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from {
+                transform: scale(0.9);
+            }
+
+            to {
+                transform: scale(1.15);
+            }
+        }
+
+        .dab-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .dab-desc {
+            font-size: 13px;
+            color: #fecaca;
+        }
+
+        .dab-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 18px 24px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .header-title h1 {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-title p {
+            font-size: 14px;
+            color: var(--text-sub);
+            margin-top: 2px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .live-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .tag-disconnected {
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .tag-connected {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .tag-connecting {
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        /* Grid Layout */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-sub);
+        }
+
+        input,
+        select {
+            background: #090d16;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 10px 14px;
+            color: var(--text-main);
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .btn {
+            background: var(--accent);
+            color: #0b0f19;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 18px;
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background: var(--accent-hover);
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #dc2626;
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #059669;
+        }
+
+        .btn-warning {
+            background: var(--warning);
+            color: #0b0f19;
+        }
+
+        .btn-warning:hover {
+            background: #d97706;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .status-box {
+            background: #090d16;
+            border-radius: 10px;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .status-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status-label {
+            color: var(--text-sub);
+            font-weight: 600;
+        }
+
+        .status-val {
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        /* 🛡️ Safety Lock Switch Bar */
+        .safety-lock-bar {
+            background: rgba(16, 185, 129, 0.12);
+            border: 1.5px solid rgba(16, 185, 129, 0.4);
+            border-radius: 12px;
+            padding: 12px 14px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .switch-container {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 26px;
+            flex-shrink: 0;
+        }
+
+        .switch-container input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .switch-slider {
+            position: absolute;
+            cursor: pointer;
+            inset: 0;
+            background-color: #334155;
+            transition: .3s;
+            border-radius: 34px;
+        }
+
+        .switch-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .3s;
+            border-radius: 50%;
+        }
+
+        input:checked+.switch-slider {
+            background-color: var(--success);
+        }
+
+        input:checked+.switch-slider:before {
+            transform: translateX(22px);
+        }
+
+        .slb-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .slb-title {
+            font-size: 13px;
+            font-weight: 800;
+            color: #34d399;
+        }
+
+        .slb-desc {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .safety-badges-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .safety-badge {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* 🎵 BGM Player Styling */
+        .bgm-track-box {
+            background: #090d16;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bgm-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            overflow: hidden;
+        }
+
+        .bgm-title {
+            font-size: 14px;
+            font-weight: 800;
+            color: #f1f5f9;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .bgm-format {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .bgm-badge {
+            background: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+            border: 1px solid #10b981;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .bgm-badge.paused {
+            background: rgba(245, 158, 11, 0.2);
+            color: #fbbf24;
+            border-color: #f59e0b;
+        }
+
+        .soundpad-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .sound-btn {
+            background: #1e293b;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .sound-btn:hover {
+            background: #334155;
+            border-color: var(--accent);
+        }
+
+        /* Double Confirmation Modal */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(6px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+
+        .modal-box {
+            background: #1e293b;
+            border: 2px solid #ef4444;
+            border-radius: 20px;
+            max-width: 480px;
+            width: 100%;
+            padding: 28px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes modalPop {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .modal-icon {
+            font-size: 48px;
+            margin-bottom: -6px;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: 900;
+            color: #f87171;
+        }
+
+        .modal-desc {
+            font-size: 14px;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Emergency Disconnect Alert Banner (Hidden by default) -->
+        <div id="alert-disconnect-banner" class="disconnect-alert-banner" style="display: none;">
+            <div class="dab-content">
+                <span class="dab-icon">⚠️</span>
+                <div>
+                    <div class="dab-title">PERINGATAN: KONEKSI TIKTOK TERPUTUS TIBA-TIBA!</div>
+                    <div class="dab-desc">Sistem Watchdog sedang mencoba menyambungkan ulang otomatis...</div>
+                </div>
+            </div>
+            <div class="dab-actions">
+                <button class="btn btn-warning" id="btn-force-reconnect">⚡ Reconnect Paksa</button>
+                <button class="btn btn-danger" id="btn-silence-alarm">🔕 Diamkan Alarm</button>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <div class="header-title">
+                <h1>🎛️ Streamer Control Room</h1>
+                <p>Kuis Kilat SD (Port 3002) · 12 Kategori & 120 Soal · Anti-Endstream Guard Active</p>
+            </div>
+            <div class="header-right">
+                <div class="live-tag tag-disconnected" id="tiktok-live-tag">
+                    <span id="tiktok-indicator">🔴</span>
+                    <span id="tiktok-status-text">TikTok: Terputus</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid-layout">
+            <!-- 🛑 Mode Penutupan Siaran (Ending Live) -->
+            <div class="card"
+                style="border: 2px solid #ef4444; background: linear-gradient(180deg, rgba(239, 68, 68, 0.12) 0%, rgba(15, 23, 42, 0.95) 100%);">
+                <div class="card-title"
+                    style="color: #f87171; display: flex; align-items: center; justify-content: space-between;">
+                    <span>🛑 Mode Penutupan Siaran (Ending Live)</span>
+                    <span
+                        style="font-size: 11px; padding: 2px 8px; border-radius: 10px; background: rgba(239,68,68,0.25); color: #fca5a5; border: 1px solid #ef4444;">Eksklusif
+                        Penutupan</span>
+                </div>
+
+                <p style="font-size: 12px; color: #cbd5e1; margin-bottom: 12px; line-height: 1.4;">
+                    Pemberitahuan resmi sebelum akhiri siaran agar penonton tidak kaget:
+                </p>
+
+                <!-- Tombol 1: Umumkan Soal Terakhir -->
+                <button class="btn" id="btn-trigger-last-soal"
+                    style="width: 100%; margin-bottom: 10px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; font-weight: 900; font-size: 14px; padding: 14px; border: none; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);">
+                    ⚠️ 1. UMUMKAN SOAL TERAKHIR
+                </button>
+
+                <!-- Tombol 2: Tampilkan Layar Podium Penutupan Akbar -->
+                <button class="btn" id="btn-trigger-closing-screen"
+                    style="width: 100%; margin-bottom: 10px; background: linear-gradient(135deg, #ef4444, #be123c); color: white; font-weight: 900; font-size: 14px; padding: 14px; border: none; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.35);">
+                    🎬 2. TAMPILKAN PODIUM AKBAR & PAMITAN
+                </button>
+
+                <div class="btn-group">
+                    <button class="btn" id="btn-play-closing-voice"
+                        style="flex: 1; border-color: #38bdf8; color: #38bdf8; font-weight: bold;">
+                        🎙️ Voice Pamitan
+                    </button>
+                    <button class="btn" id="btn-dismiss-closing"
+                        style="flex: 1; border-color: #64748b; color: #94a3b8;">
+                        ↩️ Tutup Layar
+                    </button>
+                </div>
+            </div>
+
+            <!-- 1. Koneksi TikTok Live & Safety Sentinel -->
+            <div class="card">
+                <div class="card-title">📡 Koneksi TikTok LIVE & Safety Shield</div>
+
+                <!-- 🛡️ Safety Lock Switch Bar -->
+                <div class="safety-lock-bar">
+                    <label class="switch-container">
+                        <input type="checkbox" id="check-safety-lock" checked>
+                        <span class="switch-slider"></span>
+                    </label>
+                    <div class="slb-content">
+                        <span class="slb-title">🛡️ Kunci Pengaman Live (Anti-Endstream)</span>
+                        <span class="slb-desc">Mencegah tab tertutup & tombol putus koneksi terkunci otomatis</span>
+                    </div>
+                </div>
+
+                <div class="safety-badges-row">
+                    <span class="safety-badge" id="badge-wakelock">☕ Anti-Sleep CPU: AKTIF</span>
+                    <span class="safety-badge" id="badge-tablock">🚫 Anti-Close Tab: AKTIF</span>
+                    <span class="safety-badge" id="badge-watchdog">🔄 Watchdog Auto-Reconnect</span>
+                </div>
+
+                <div class="form-group">
+                    <label>Username TikTok (Contoh: spillsabi.id)</label>
+                    <input type="text" id="input-username" value="spillsabi.id">
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-success" id="btn-connect" style="flex: 1.2;">🟢 Sambungkan</button>
+                    <button class="btn btn-danger" id="btn-disconnect" style="flex: 1;">🔒 Putus (Terkunci)</button>
+                </div>
+
+                <div class="status-box">
+                    <div class="status-row">
+                        <span class="status-label">Target Akun:</span>
+                        <span class="status-val" id="val-target-user">@spillsabi.id</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">Room ID:</span>
+                        <span class="status-val" id="val-room-id">-</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">Status Siaga:</span>
+                        <span class="status-val" id="val-safety-status" style="color: #34d399;">Shield Aktif
+                            (Aman)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Kontrol Musik Backsound (BGM Player) -->
+            <div class="card">
+                <div class="card-title">🎵 Musik Backsound (BGM Player OBS)</div>
+
+                <div class="bgm-track-box">
+                    <div class="bgm-info">
+                        <span class="bgm-title">🎹 Piano Sedih Komedi SD</span>
+                        <span class="bgm-format">bgm_piano_sedih.webm · No Copyright Safe</span>
+                    </div>
+                    <div class="bgm-badge" id="bgm-status-badge">🟢 Memutar</div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-success" id="btn-bgm-play" style="flex: 1;">▶️ Play BGM</button>
+                    <button class="btn btn-warning" id="btn-bgm-pause" style="flex: 1;">⏸️ Pause BGM</button>
+                    <button class="btn" id="btn-bgm-mute">🔇 Mute</button>
+                </div>
+
+                <div class="form-group" style="margin-top: 4px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <label>Volume Backsound di Layar OBS:</label>
+                        <span id="bgm-vol-label" style="font-weight: 800; color: #38bdf8;">55%</span>
+                    </div>
+                    <input type="range" id="bgm-vol-slider" min="0" max="100" value="55"
+                        style="width: 100%; cursor: pointer;">
+                </div>
+
+                <p style="font-size: 12px; color: #94a3b8; line-height: 1.4;">
+                    💡 <em>Volume 50–65% adalah sweet spot backsound agar terdengar hidup dan dramatis, otomatis ducking
+                        saat ada suara AI.</em>
+                </p>
+            </div>
+
+            <!-- 3. Suara Voiceover Seksi Gemini (Mbak Gadis) -->
+            <div class="card">
+                <div class="card-title">🎙️ Voiceover Seksi Gemini (Mbak Gadis)</div>
+                <div class="status-box">
+                    <div class="status-row">
+                        <span class="status-label">Engine Suara:</span>
+                        <span class="status-val" style="color: #38bdf8;">✨ Gemini 3.8 Flash (Aoede Studio)</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">Gaya Vokal:</span>
+                        <span class="status-val" style="color: #f43f5e;">💃 Flirty, Seductive & Manis</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">Filter Ketat:</span>
+                        <span class="status-val" style="color: #34d399;">🛡️ 100% Bebas Kata "Sayang" (Sopan &
+                            Nyaman)</span>
+                    </div>
+                </div>
+
+                <div style="font-size: 13px; font-weight: 800; color: #94a3b8; margin: 4px 0 2px 0;">
+                    🎮 Soundboard Voiceover Manual (Klik untuk Bunyikan di Live):
+                </div>
+
+                <div class="soundpad-grid" style="grid-template-columns: 1fr 1fr; gap: 8px;">
+                    <button class="sound-btn vo-btn" data-clip="vo_sapa">🌸 Sapaan Pembuka</button>
+                    <button class="sound-btn vo-btn" data-clip="vo_gift"
+                        style="border-color: #ec4899; color: #f472b6;">💎 Makasih Gift Sultan</button>
+                    <button class="sound-btn vo-btn" data-clip="vo_tease_1">😏 Goda: Mikir Kelamaan</button>
+                    <button class="sound-btn vo-btn" data-clip="vo_tease_2">😉 Goda: Jangan Melamun</button>
+                    <button class="sound-btn vo-btn" data-clip="vo_tease_3">🦁 Goda: Fokus Jagoan</button>
+                    <button class="sound-btn vo-btn" data-clip="vo_tease_4">🤭 Goda: Gemas Banget</button>
+                    <button class="sound-btn vo-btn" data-clip="vo_winner_1">⚡ Puji: Gercep Banget</button>
+                    <button class="sound-btn vo-btn" data-clip="vo_winner_2">👑 Puji: Nomor Satu</button>
+                    <button class="sound-btn vo-btn" data-clip="vo_timeout" style="grid-column: span 2;">⏰ Goda: Waktu
+                        Habis</button>
+                </div>
+            </div>
+
+            <!-- 4. Kontrol Game & Ronde (12 Kategori Lengkap) -->
+            <div class="card">
+                <div class="card-title">🎮 Kontrol Game & 12 Kategori</div>
+                <div class="status-box">
+                    <div class="status-row">
+                        <span class="status-label">Ronde Aktif:</span>
+                        <span class="status-val" id="val-round-num">Ronde 1</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">Nomor Soal:</span>
+                        <span class="status-val" id="val-soal-num">Soal 1/10</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">Jawaban Benar:</span>
+                        <span class="status-val" id="val-correct-ans" style="color: #34d399;">-</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Lompat ke Ronde / Kategori:</label>
+                    <select id="select-round">
+                        <optgroup label="🌟 SERI 1 (Ronde 1 - 12)">
+                            <option value="1">Ronde 1: 🌍 Geografi & Peta Indonesia (1)</option>
+                            <option value="2">Ronde 2: 🦁 Sains & Dunia Hewan (1)</option>
+                            <option value="3">Ronde 3: 🚀 Tata Surya & Antariksa (1)</option>
+                            <option value="4">Ronde 4: 📐 Matematika Refleks SD (1)</option>
+                            <option value="5">Ronde 5: 🤪 Teka-Teki Receh Lucu (1)</option>
+                            <option value="6">Ronde 6: 🫀 Tubuh & Kesehatan (1)</option>
+                            <option value="7">Ronde 7: 📚 Bahasa & Peribahasa (1)</option>
+                            <option value="8">Ronde 8: 🇮🇩 Sejarah & Pahlawan (1)</option>
+                            <option value="9">Ronde 9: 🎭 Budaya & Rumah Adat (1)</option>
+                            <option value="10">Ronde 10: 🦅 PPKn & Garuda Pancasila (1)</option>
+                            <option value="11">Ronde 11: 🔬 Sains Benda di Sekitar (1)</option>
+                            <option value="12">Ronde 12: ⚽ Permainan Tradisional & Olahraga (1)</option>
+                        </optgroup>
+                        <optgroup label="🌟 SERI 2 (Ronde 13 - 24)">
+                            <option value="13">Ronde 13: 🌍 Geografi & Peta Indonesia (2)</option>
+                            <option value="14">Ronde 14: 🦁 Sains & Dunia Hewan (2)</option>
+                            <option value="15">Ronde 15: 🚀 Tata Surya & Antariksa (2)</option>
+                            <option value="16">Ronde 16: 📐 Matematika Refleks SD (2)</option>
+                            <option value="17">Ronde 17: 🤪 Teka-Teki Receh Lucu (2)</option>
+                            <option value="18">Ronde 18: 🫀 Tubuh & Kesehatan (2)</option>
+                            <option value="19">Ronde 19: 📚 Bahasa & Peribahasa (2)</option>
+                            <option value="20">Ronde 20: 🇮🇩 Sejarah & Pahlawan (2)</option>
+                            <option value="21">Ronde 21: 🎭 Budaya & Rumah Adat (2)</option>
+                            <option value="22">Ronde 22: 🦅 PPKn & Garuda Pancasila (2)</option>
+                            <option value="23">Ronde 23: 🔬 Sains Benda di Sekitar (2)</option>
+                            <option value="24">Ronde 24: ⚽ Permainan Tradisional & Olahraga (2)</option>
+                        </optgroup>
+                        <optgroup label="🌟 SERI 3 (Ronde 25 - 36)">
+                            <option value="25">Ronde 25: 🌍 Geografi & Peta Indonesia (3)</option>
+                            <option value="26">Ronde 26: 🦁 Sains & Dunia Hewan (3)</option>
+                            <option value="27">Ronde 27: 🚀 Tata Surya & Antariksa (3)</option>
+                            <option value="28">Ronde 28: 📐 Matematika Refleks SD (3)</option>
+                            <option value="29">Ronde 29: 🤪 Teka-Teki Receh Lucu (3)</option>
+                            <option value="30">Ronde 30: 🫀 Tubuh & Kesehatan (3)</option>
+                            <option value="31">Ronde 31: 📚 Bahasa & Peribahasa (3)</option>
+                            <option value="32">Ronde 32: 🇮🇩 Sejarah & Pahlawan (3)</option>
+                            <option value="33">Ronde 33: 🎭 Budaya & Rumah Adat (3)</option>
+                            <option value="34">Ronde 34: 🦅 PPKn & Garuda Pancasila (3)</option>
+                            <option value="35">Ronde 35: 🔬 Sains Benda di Sekitar (3)</option>
+                            <option value="36">Ronde 36: ⚽ Permainan Tradisional & Olahraga (3)</option>
+                        </optgroup>
+                        <optgroup label="🌟 SERI 4 (Ronde 37 - 48)">
+                            <option value="37">Ronde 37: 🌍 Geografi & Peta Indonesia (4)</option>
+                            <option value="38">Ronde 38: 🦁 Sains & Dunia Hewan (4)</option>
+                            <option value="39">Ronde 39: 🚀 Tata Surya & Antariksa (4)</option>
+                            <option value="40">Ronde 40: 📐 Matematika Refleks SD (4)</option>
+                            <option value="41">Ronde 41: 🤪 Teka-Teki Receh Lucu (4)</option>
+                            <option value="42">Ronde 42: 🫀 Tubuh & Kesehatan (4)</option>
+                            <option value="43">Ronde 43: 📚 Bahasa & Peribahasa (4)</option>
+                            <option value="44">Ronde 44: 🇮🇩 Sejarah & Pahlawan (4)</option>
+                            <option value="45">Ronde 45: 🎭 Budaya & Rumah Adat (4)</option>
+                            <option value="46">Ronde 46: 🦅 PPKn & Garuda Pancasila (4)</option>
+                            <option value="47">Ronde 47: 🔬 Sains Benda di Sekitar (4)</option>
+                            <option value="48">Ronde 48: ⚽ Permainan Tradisional & Olahraga (4)</option>
+                        </optgroup>
+                        <optgroup label="🌟 SERI 5 (Ronde 49 - 60)">
+                            <option value="49">Ronde 49: 🌍 Geografi & Peta Indonesia (5)</option>
+                            <option value="50">Ronde 50: 🦁 Sains & Dunia Hewan (5)</option>
+                            <option value="51">Ronde 51: 🚀 Tata Surya & Antariksa (5)</option>
+                            <option value="52">Ronde 52: 📐 Matematika Refleks SD (5)</option>
+                            <option value="53">Ronde 53: 🤪 Teka-Teki Receh Lucu (5)</option>
+                            <option value="54">Ronde 54: 🫀 Tubuh & Kesehatan (5)</option>
+                            <option value="55">Ronde 55: 📚 Bahasa & Peribahasa (5)</option>
+                            <option value="56">Ronde 56: 🇮🇩 Sejarah & Pahlawan (5)</option>
+                            <option value="57">Ronde 57: 🎭 Budaya & Rumah Adat (5)</option>
+                            <option value="58">Ronde 58: 🦅 PPKn & Garuda Pancasila (5)</option>
+                            <option value="59">Ronde 59: 🔬 Sains Benda di Sekitar (5)</option>
+                            <option value="60">Ronde 60: ⚽ Permainan Tradisional & Olahraga (5)</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn" id="btn-next-soal" style="flex: 1;">⏩ Soal Berikutnya / Skip</button>
+                    <button class="btn" id="btn-jump-round">Lompat Ronde</button>
+                </div>
+
+                <div class="form-group" style="margin-top: 14px;">
+                    <label>Tampilan Papan di Layar (Auto-Rotasi: Kuis 24 dtk ⇄ Sultan 8 dtk):</label>
+                    <div class="btn-group">
+                        <button class="btn" id="btn-show-quiz-tab" style="flex: 1;">🏅 Klasemen Kuis</button>
+                        <button class="btn" id="btn-show-donor-tab"
+                            style="flex: 1; border-color: #ec4899; color: #f472b6;">💎 Top Sultan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Simulator Jawaban Penonton -->
+            <div class="card">
+                <div class="card-title">🤖 Simulator Penonton (Testing)</div>
+                <div class="form-group">
+                    <label>Kirim Jawaban Manual</label>
+                    <input type="text" id="sim-comment"
+                        placeholder="Ketik A, B, C, D, E atau teks seperti 'Bandung' / 'Pontianak'">
+                </div>
+                <button class="btn" id="btn-sim-send">Kirim Komentar Penonton</button>
+
+                <div
+                    style="border-top: 1px solid var(--border); padding-top: 10px; display: flex; flex-direction: column; gap: 8px;">
+                    <label style="display: block;">Simulasi Jawaban Cepat:</label>
+                    <button class="btn btn-success" id="btn-sim-top3-correct" style="width: 100%;">
+                        🥇 Buat 3 Penonton Menjawab Benar (Tes Top 3)
+                    </button>
+                    <button class="btn" id="btn-sim-random-5" style="width: 100%;">
+                        ⚡ Buat 5 Penonton Menjawab Acak (A-D)
+                    </button>
+                </div>
+            </div>
+
+            <!-- 5. Simulator Gift & Soundpad -->
+            <div class="card">
+                <div class="card-title">🎁 Simulasi Gift & Soundboard</div>
+                <div class="btn-group" style="margin-bottom: 8px;">
+                    <button class="btn" id="btn-gift-rose" style="flex: 1;">🌹 Mawar (1💎)</button>
+                    <button class="btn" id="btn-gift-donut" style="flex: 1;">🍩 Donat (30💎)</button>
+                    <button class="btn" id="btn-gift-whale" style="flex: 1;">🐳 Paus (1000💎)</button>
+                </div>
+
+                <button class="btn" id="btn-sim-top-donors"
+                    style="width: 100%; margin-bottom: 14px; background: linear-gradient(135deg, #ec4899, #be185d); color: white; font-weight: 800;">
+                    💎 Simulasi 3 Donatur Top Sultan (500, 1200, 3000💎)
+                </button>
+
+                <div class="card-title" style="margin-top: 8px;">🔊 Soundboard Siaran</div>
+                <div class="soundpad-grid">
+                    <button class="sound-btn" data-sound="correct">🔔 Ding Jawaban</button>
+                    <button class="sound-btn" data-sound="winner">⚡ Tercepat</button>
+                    <button class="sound-btn" data-sound="fanfare">🎺 Fanfare Ronde</button>
+                    <button class="sound-btn" data-sound="gift">✨ Gift Keren</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Konfirmasi Ganda Pemutusan Siaran -->
+    <div class="modal-backdrop" id="modal-confirm-disconnect" style="display: none;">
+        <div class="modal-box">
+            <div class="modal-icon">⚠️</div>
+            <h2 class="modal-title">Konfirmasi Akhiri Siaran</h2>
+            <p class="modal-desc">
+                Kunci Pengaman Siaran sedang aktif! Jika Anda memutuskan koneksi, sistem akan berhenti membaca komentar
+                dan gift penonton live.
+                <br><br>
+                Apakah Anda benar-benar yakin ingin memutuskan koneksi TikTok sekarang?
+            </p>
+            <div class="modal-actions">
+                <button class="btn" id="btn-modal-cancel" style="flex: 1.2;">Batal (Tetap Live)</button>
+                <button class="btn btn-danger" id="btn-modal-confirm" style="flex: 1;">Ya, Putuskan</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const socket = io();
+
+        // DOM Elements
+        const tiktokLiveTag = document.getElementById('tiktok-live-tag');
+        const tiktokIndicator = document.getElementById('tiktok-indicator');
+        const tiktokStatusText = document.getElementById('tiktok-status-text');
+        const valTargetUser = document.getElementById('val-target-user');
+        const valRoomId = document.getElementById('val-room-id');
+        const valSafetyStatus = document.getElementById('val-safety-status');
+
+        const valRoundNum = document.getElementById('val-round-num');
+        const valSoalNum = document.getElementById('val-soal-num');
+        const valCorrectAns = document.getElementById('val-correct-ans');
+
+        // Safety Lock Elements
+        const checkSafetyLock = document.getElementById('check-safety-lock');
+        const btnDisconnect = document.getElementById('btn-disconnect');
+        const modalConfirmDisconnect = document.getElementById('modal-confirm-disconnect');
+        const btnModalCancel = document.getElementById('btn-modal-cancel');
+        const btnModalConfirm = document.getElementById('btn-modal-confirm');
+        const alertDisconnectBanner = document.getElementById('alert-disconnect-banner');
+        const btnForceReconnect = document.getElementById('btn-force-reconnect');
+        const btnSilenceAlarm = document.getElementById('btn-silence-alarm');
+
+        // BGM Elements
+        const bgmStatusBadge = document.getElementById('bgm-status-badge');
+        const btnBgmPlay = document.getElementById('btn-bgm-play');
+        const btnBgmPause = document.getElementById('btn-bgm-pause');
+        const btnBgmMute = document.getElementById('btn-bgm-mute');
+        const bgmVolSlider = document.getElementById('bgm-vol-slider');
+        const bgmVolLabel = document.getElementById('bgm-vol-label');
+
+        let isLiveStreamActive = false;
+        let isAudioAlarmPlaying = false;
+        let audioAlarmInterval = null;
+        let audioCtx = null;
+        let wakeLock = null;
+
+        // ==========================================================================
+        // 🛡️ ANTI-ENDSTREAM GUARD & SAFETY SYSTEM
+        // ==========================================================================
+
+        // 1. Web Audio Alarm Generator (Beep-Beep saat koneksi drop tiba-tiba)
+        function playEmergencyBeep() {
+            try {
+                if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(880, audioCtx.currentTime); // High A5
+                osc.frequency.exponentialRampToValueAtTime(587.33, audioCtx.currentTime + 0.25); // Drop to D5
+                gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.28);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.3);
+            } catch (e) { }
+        }
+
+        function startAlarm() {
+            if (isAudioAlarmPlaying) return;
+            isAudioAlarmPlaying = true;
+            if (alertDisconnectBanner) alertDisconnectBanner.style.display = 'flex';
+            playEmergencyBeep();
+            audioAlarmInterval = setInterval(playEmergencyBeep, 800);
+        }
+
+        function stopAlarm() {
+            isAudioAlarmPlaying = false;
+            if (audioAlarmInterval) clearInterval(audioAlarmInterval);
+            if (alertDisconnectBanner) alertDisconnectBanner.style.display = 'none';
+        }
+
+        btnSilenceAlarm.addEventListener('click', stopAlarm);
+        btnForceReconnect.addEventListener('click', () => {
+            const user = document.getElementById('input-username').value;
+            socket.emit('STREAMER_FORCE_RECONNECT_TIKTOK', user);
+            stopAlarm();
+        });
+
+        // 2. Anti-Accidental Tab Close / Reload (`beforeunload`)
+        window.addEventListener('beforeunload', (e) => {
+            if (checkSafetyLock.checked) {
+                e.preventDefault();
+                e.returnValue = 'Perhatian! Anda sedang siaran LIVE. Yakin ingin menutup halaman ini?';
+                return e.returnValue;
+            }
+        });
+
+        // 3. WakeLock API (Anti-Sleep Tab & Layar)
+        async function requestWakeLock() {
+            if ('wakeLock' in navigator) {
+                try {
+                    wakeLock = await navigator.wakeLock.request('screen');
+                    console.log('[SAFETY] ☕ Screen WakeLock berhasil diaktifkan.');
+                } catch (err) {
+                    console.log('[SAFETY] WakeLock info:', err.message);
+                }
+            }
+        }
+        requestWakeLock();
+        document.addEventListener('visibilitychange', () => {
+            if (wakeLock !== null && document.visibilityState === 'visible') {
+                requestWakeLock();
+            }
+        });
+
+        // 4. Update Status Kunci Pengaman
+        function updateSafetyLockUI() {
+            const isLocked = checkSafetyLock.checked;
+            if (isLocked) {
+                btnDisconnect.innerText = '🔒 Putus (Terkunci)';
+                btnDisconnect.style.opacity = '0.85';
+                valSafetyStatus.innerText = 'Shield Aktif (Aman)';
+                valSafetyStatus.style.color = '#34d399';
+            } else {
+                btnDisconnect.innerText = 'Putuskan Koneksi';
+                btnDisconnect.style.opacity = '1';
+                valSafetyStatus.innerText = 'Kunci Dibuka (Waspada)';
+                valSafetyStatus.style.color = '#fbbf24';
+            }
+        }
+        checkSafetyLock.addEventListener('change', updateSafetyLockUI);
+        updateSafetyLockUI();
+
+        // Tombol Putus Koneksi: Memeriksa Kunci Pengaman
+        btnDisconnect.addEventListener('click', () => {
+            if (checkSafetyLock.checked) {
+                // Munculkan Modal Konfirmasi Ganda
+                modalConfirmDisconnect.style.display = 'flex';
+            } else {
+                socket.emit('STREAMER_DISCONNECT_TIKTOK');
+            }
+        });
+
+        btnModalCancel.addEventListener('click', () => {
+            modalConfirmDisconnect.style.display = 'none';
+        });
+
+        btnModalConfirm.addEventListener('click', () => {
+            modalConfirmDisconnect.style.display = 'none';
+            socket.emit('STREAMER_DISCONNECT_TIKTOK');
+            stopAlarm();
+        });
+
+        // ==========================================================================
+        // 📡 TIKTOK LIVE STATUS & WATCHDOG LISTENER
+        // ==========================================================================
+        socket.on('TIKTOK_STATUS', (data) => {
+            valTargetUser.innerText = `@${data.username}`;
+            if (data.roomId) valRoomId.innerText = data.roomId;
+
+            if (data.connected) {
+                isLiveStreamActive = true;
+                tiktokLiveTag.className = 'live-tag tag-connected';
+                tiktokIndicator.innerText = '🟢';
+                tiktokStatusText.innerText = `TikTok: LIVE (${data.username})`;
+                stopAlarm();
+            } else if (data.connecting) {
+                tiktokLiveTag.className = 'live-tag tag-connecting';
+                tiktokIndicator.innerText = '🟡';
+                tiktokStatusText.innerText = `TikTok: Menyambungkan...`;
+            } else {
+                tiktokLiveTag.className = 'live-tag tag-disconnected';
+                tiktokIndicator.innerText = '🔴';
+                tiktokStatusText.innerText = `TikTok: Terputus`;
+
+                // Jika terputus tiba-tiba (unexpected) saat streamer sedang live / safety lock aktif:
+                if (data.unexpected && isLiveStreamActive) {
+                    console.warn('[WATCHDOG] ⚠️ Terdeteksi putus koneksi tidak sengaja!');
+                    startAlarm();
+                }
+                isLiveStreamActive = false;
+            }
+        });
+
+        // ==========================================================================
+        // 🎵 BGM REMOTE CONTROLLER
+        // ==========================================================================
+        btnBgmPlay.addEventListener('click', () => {
+            socket.emit('STREAMER_BGM_CONTROL', { action: 'play' });
+        });
+
+        btnBgmPause.addEventListener('click', () => {
+            socket.emit('STREAMER_BGM_CONTROL', { action: 'pause' });
+        });
+
+        let isMuted = false;
+        let lastVolume = 55;
+
+        btnBgmMute.addEventListener('click', () => {
+            if (!isMuted) {
+                lastVolume = parseInt(bgmVolSlider.value) || 55;
+                bgmVolSlider.value = 0;
+                bgmVolLabel.innerText = '0%';
+                btnBgmMute.innerText = '🔊 Unmute';
+                isMuted = true;
+                socket.emit('STREAMER_BGM_VOLUME', 0);
+            } else {
+                bgmVolSlider.value = lastVolume || 55;
+                bgmVolLabel.innerText = `${lastVolume}%`;
+                btnBgmMute.innerText = '🔇 Mute';
+                isMuted = false;
+                socket.emit('STREAMER_BGM_VOLUME', (lastVolume || 55) / 100);
+            }
+        });
+
+        bgmVolSlider.addEventListener('input', (e) => {
+            const val = parseInt(e.target.value);
+            bgmVolLabel.innerText = `${val}%`;
+            isMuted = (val === 0);
+            btnBgmMute.innerText = isMuted ? '🔊 Unmute' : '🔇 Mute';
+            socket.emit('STREAMER_BGM_VOLUME', val / 100);
+        });
+
+        socket.on('BGM_STATE_UPDATE', (state) => {
+            if (!state) return;
+            if (state.volume !== undefined) {
+                const volPct = Math.round(state.volume * 100);
+                bgmVolSlider.value = volPct;
+                bgmVolLabel.innerText = `${volPct}%`;
+                isMuted = (volPct === 0);
+                btnBgmMute.innerText = isMuted ? '🔊 Unmute' : '🔇 Mute';
+            }
+            if (state.playing !== undefined) {
+                if (state.playing) {
+                    bgmStatusBadge.className = 'bgm-badge';
+                    bgmStatusBadge.innerText = '🟢 Memutar di OBS';
+                } else {
+                    bgmStatusBadge.className = 'bgm-badge paused';
+                    bgmStatusBadge.innerText = '⏸️ Berhenti';
+                }
+            }
+        });
+
+        // ==========================================================================
+        // 🎙️ GEMINI VOICEOVER CONTROLS (Mbak Gadis)
+        // ==========================================================================
+        document.querySelectorAll('.vo-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const clip = btn.getAttribute('data-clip');
+                console.log('[STREAMER] Membunyikan klip Gemini:', clip);
+                socket.emit('STREAMER_PLAY_VOICE', clip);
+            });
+        });
+
+        // ==========================================================================
+        // 🎮 GAME STATE & REGULAR CONTROLS
+        // ==========================================================================
+        socket.on('SYNC_STATE', (data) => {
+            valRoundNum.innerText = `Ronde ${data.roundNumber}: ${data.kategori}`;
+            valSoalNum.innerText = `Soal ${data.questionNumber}/${data.totalQuestionsInRound}`;
+            valCorrectAns.innerText = data.jawaban || 'Menunggu Pembahasan';
+        });
+
+        socket.on('QUESTION_START', (data) => {
+            valRoundNum.innerText = `Ronde ${data.roundNumber}: ${data.kategori}`;
+            valSoalNum.innerText = `Soal ${data.questionNumber}/${data.totalQuestionsInRound}`;
+            valCorrectAns.innerText = 'Dirahasiakan (Aktif)';
+        });
+
+        socket.on('QUESTION_REVEAL', (data) => {
+            valCorrectAns.innerText = data.correctAnswer;
+        });
+
+        // Action Buttons
+        document.getElementById('btn-connect').addEventListener('click', () => {
+            const user = document.getElementById('input-username').value;
+            if (user) socket.emit('STREAMER_CONNECT_TIKTOK', user);
+        });
+
+        document.getElementById('btn-next-soal').addEventListener('click', () => {
+            socket.emit('STREAMER_NEXT_QUESTION');
+        });
+
+        document.getElementById('btn-jump-round').addEventListener('click', () => {
+            const r = document.getElementById('select-round').value;
+            socket.emit('STREAMER_JUMP_ROUND', r);
+        });
+
+        // Kontrol Tab Klasemen Manual
+        document.getElementById('btn-show-quiz-tab').addEventListener('click', () => {
+            socket.emit('STREAMER_SWITCH_TAB', 'quiz');
+        });
+        document.getElementById('btn-show-donor-tab').addEventListener('click', () => {
+            socket.emit('STREAMER_SWITCH_TAB', 'donors');
+        });
+
+        // Simulator
+        document.getElementById('btn-sim-send').addEventListener('click', () => {
+            const text = document.getElementById('sim-comment').value.trim();
+            if (text) {
+                socket.emit('STREAMER_SIMULATE_COMMENT', {
+                    username: 'user_tester_' + Math.floor(Math.random() * 100),
+                    nickname: 'Viewer Cerdas',
+                    text: text
+                });
+                document.getElementById('sim-comment').value = '';
+            }
+        });
+
+        // Simulator Top 3 Correct (Otomatis ambil jawaban benar dari server)
+        document.getElementById('btn-sim-top3-correct').addEventListener('click', () => {
+            socket.emit('STREAMER_SIMULATE_TOP3_CORRECT');
+        });
+
+        document.getElementById('btn-sim-random-5').addEventListener('click', () => {
+            const opts = ['A', 'B', 'C', 'D', 'E'];
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const rnd = opts[Math.floor(Math.random() * opts.length)];
+                    socket.emit('STREAMER_SIMULATE_COMMENT', {
+                        username: 'bocil_' + Math.floor(Math.random() * 900 + 100),
+                        nickname: 'Bocah SD ' + (i + 1),
+                        text: rnd
+                    });
+                }, i * 300);
+            }
+        });
+
+        // Gifts
+        document.getElementById('btn-gift-rose').addEventListener('click', () => {
+            socket.emit('STREAMER_SIMULATE_GIFT', { giftName: 'Mawar', diamonds: 1 });
+        });
+        document.getElementById('btn-gift-donut').addEventListener('click', () => {
+            socket.emit('STREAMER_SIMULATE_GIFT', { giftName: 'Donat', diamonds: 30 });
+        });
+        document.getElementById('btn-gift-whale').addEventListener('click', () => {
+            socket.emit('STREAMER_SIMULATE_GIFT', { giftName: 'Paus', diamonds: 1000 });
+        });
+        const btnSimTopDonors = document.getElementById('btn-sim-top-donors');
+        if (btnSimTopDonors) {
+            btnSimTopDonors.addEventListener('click', () => {
+                socket.emit('STREAMER_SIMULATE_TOP_DONORS');
+            });
+        }
+
+        // Soundboard
+        document.querySelectorAll('.sound-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const snd = btn.getAttribute('data-sound');
+                socket.emit('STREAMER_PLAY_SOUND', snd);
+            });
+        });
+
+        // 🛑 Kontrol Mode Penutupan Siaran (Ending Live)
+        document.getElementById('btn-trigger-last-soal').addEventListener('click', () => {
+            if (confirm("Umumkan bahwa ini SOAL TERAKHIR siaran hari ini ke layar penonton?")) {
+                socket.emit('STREAMER_TRIGGER_LAST_SOAL');
+            }
+        });
+
+        document.getElementById('btn-trigger-closing-screen').addEventListener('click', () => {
+            if (confirm("Buka Layar Penutupan Akbar & Podium Juara Akhir sekarang?")) {
+                socket.emit('STREAMER_TRIGGER_CLOSING_SCREEN');
+            }
+        });
+
+        document.getElementById('btn-play-closing-voice').addEventListener('click', () => {
+            socket.emit('STREAMER_PLAY_VOICE', 'vo_closing');
+        });
+
+        document.getElementById('btn-dismiss-closing').addEventListener('click', () => {
+            socket.emit('STREAMER_DISMISS_CLOSING');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Sasha AI VTuber - Pastel Anime Studio Overlay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Quicksand:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- 3D VRM + VRMA Engine (100% Lokal dari /vendor/) -->
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "/vendor/three/build/three.module.min.js",
+        "three/addons/": "/vendor/three/examples/jsm/",
+        "@pixiv/three-vrm": "/vendor/three-vrm/lib/three-vrm.module.min.js",
+        "@pixiv/three-vrm-animation": "/vendor/three-vrm-animation/lib/three-vrm-animation.module.min.js"
+      }
+    }
+    </script>
+    <script type="module" src="/js/vrm-engine.js"></script>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <!-- Audio Autoplay Unlock Prompt (Jika dibuka di Browser biasa) -->
+    <div id="audio-unlock-overlay" class="audio-unlock-overlay" style="display: none;">
+        <div class="audio-unlock-pill">
+            <span class="unlock-icon">🔊</span>
+            <span>Klik di mana saja untuk mengaktifkan Suara Sasha ✨</span>
+        </div>
+    </div>
+
+    <div id="stage-viewport">
+        <div id="vtuber-stage">
+            <!-- 1. Pastel Anime Gamer Bedroom Background (Ilustrasi HD 9:16) -->
+            <div class="room-background">
+                <img src="/images/room-bg.jpg" alt="Anime Room Background" class="room-bg-img">
+                <div class="room-soft-vignette"></div>
+                <div class="floating-petal petal-1">🌸</div>
+                <div class="floating-petal petal-2">🌸</div>
+                <div class="floating-petal petal-3">✨</div>
+                <div class="floating-petal petal-4">🌸</div>
+            </div>
+
+            <!-- 2. TOP HUD: Support Goal & Heart Rate (Kiri Atas) -->
+            <div class="hud-top-left">
+                <div class="goal-widget">
+                    <div class="goal-circle">
+                        <span id="goal-pct">61%</span>
+                    </div>
+                    <div class="goal-info">
+                        <div class="goal-label" id="goal-title">Dukung Sasha ✨</div>
+                        <div class="goal-bar-bg">
+                            <div class="goal-bar-fill" id="goal-fill" style="width: 61%;"></div>
+                        </div>
+                        <div class="goal-stats">
+                            <span id="goal-current">3.084</span> / <span id="goal-target">5.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="heart-rate-widget">
+                    <div class="heart-icon-wrap">
+                        <span class="heart-emoji">💖</span>
+                    </div>
+                    <div class="heart-info">
+                        <span class="heart-tag">HEART RATE</span>
+                        <div class="heart-val-row">
+                            <span class="heart-bpm" id="val-bpm">82</span>
+                            <span class="heart-unit">BPM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. TOP HUD: Stream Clock & Control Gauge (Kanan Atas) -->
+            <div class="hud-top-right">
+                <div class="timer-widget">
+                    <span class="timer-icon">⏰</span>
+                    <span class="timer-digits" id="stream-timer">03:17:59</span>
+                </div>
+
+                <div class="gauge-widget">
+                    <div class="gauge-arc">
+                        <div class="gauge-needle"></div>
+                    </div>
+                    <div class="gauge-val">100%</div>
+                    <div class="gauge-sub">KAWAII AI</div>
+                </div>
+            </div>
+
+            <!-- 4. VTUBER 3D VRM + VRMA STAGE (Center Full Fokus Karakter) -->
+            <div class="avatar-stage" id="avatar-stage">
+                <canvas id="vrm-canvas" width="1080" height="1920"></canvas>
+
+                <div id="live2d-loading" class="live2d-loading">
+                    <span class="live2d-spinner">🌸</span>
+                    <span>Memuat Sasha 3D & Animasi... ✨</span>
+                </div>
+
+                <div class="vtube-hint" id="vtube-hint" style="display: none;">
+                    <span>🎮</span> Mode VTube Studio / VSeeFace Aktif
+                </div>
+            </div>
+
+            <!-- 5. SAWERIA / GIFT POPUP ALERT -->
+            <div class="donation-toast" id="donation-toast" style="display: none;">
+                <div class="dtoast-content">
+                    <div class="dtoast-icon" id="dtoast-icon">💎</div>
+                    <div class="dtoast-info">
+                        <div class="dtoast-title" id="dtoast-title">SAWERIA MASUK!</div>
+                        <div class="dtoast-desc" id="dtoast-desc">Sultan donasi Rp 50.000</div>
+                        <div class="dtoast-msg" id="dtoast-msg">"Semangat Sasha!"</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. BOTTOM CHAT TICKER FEED (Kiri Bawah, di atas subtitle) -->
+            <div class="chat-ticker-container">
+                <div class="chat-feed-list" id="chat-feed"></div>
+            </div>
+
+            <!-- 7. DIALOGUE / SUBTITLE SPEECH BUBBLE (Posisi Bawah Rapi, tidak tutup wajah!) -->
+            <div class="speech-dialogue-wrap" id="dialogue-box" style="display: none;">
+                <div class="dialogue-card">
+                    <div class="speaker-tag" id="speaker-tag">✨ Sasha:</div>
+                    <div class="dialogue-text" id="dialogue-text">Memuat suara AI...</div>
+                </div>
+            </div>
+
+            <!-- 8. COMPACT NOTICE PILL (Paling Bawah, tidak menutupi badan avatar!) -->
+            <div class="notice-card-container">
+                <div class="notice-card">
+                    <span class="notice-badge">🤖 AI VTUBER</span>
+                    <span class="notice-sep">•</span>
+                    <span class="notice-line">Komen &amp; Gift untuk direspon langsung ✨</span>
+                    <span class="notice-sep">•</span>
+                    <span class="notice-line alert">⚠️ DIBAWAH 5 VIEW END STREAM</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="tts-audio-player" preload="auto"></audio>
+    <script src="/js/overlay.js"></script>
+</body>
+
+</html>

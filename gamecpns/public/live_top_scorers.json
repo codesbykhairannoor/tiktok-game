@@ -1,0 +1,1321 @@
+{
+  "timestamp": "2026-11-10T08:02:50.151Z",
+  "formattedTime": "10/11/2026, 15.02.50",
+  "currentQuestionNum": 20,
+  "totalRoundsPlayed": 119,
+  "totalParticipants": 164,
+  "leaderboard": [
+    {
+      "rank": 1,
+      "user": "_ eRGie _",
+      "points": 1690,
+      "correct": 36,
+      "totalAnswered": 39,
+      "accuracy": 92
+    },
+    {
+      "rank": 2,
+      "user": "Parbada",
+      "points": 1206,
+      "correct": 29,
+      "totalAnswered": 34,
+      "accuracy": 85
+    },
+    {
+      "rank": 3,
+      "user": "catfish sashimi",
+      "points": 1058,
+      "correct": 26,
+      "totalAnswered": 28,
+      "accuracy": 93
+    },
+    {
+      "rank": 4,
+      "user": "secret",
+      "points": 983,
+      "correct": 25,
+      "totalAnswered": 28,
+      "accuracy": 89
+    },
+    {
+      "rank": 5,
+      "user": "irham",
+      "points": 852,
+      "correct": 25,
+      "totalAnswered": 39,
+      "accuracy": 64
+    },
+    {
+      "rank": 6,
+      "user": "vendy lioe",
+      "points": 605,
+      "correct": 15,
+      "totalAnswered": 19,
+      "accuracy": 79
+    },
+    {
+      "rank": 7,
+      "user": "hranoona",
+      "points": 552,
+      "correct": 13,
+      "totalAnswered": 13,
+      "accuracy": 100
+    },
+    {
+      "rank": 8,
+      "user": "Kel",
+      "points": 418,
+      "correct": 14,
+      "totalAnswered": 23,
+      "accuracy": 61
+    },
+    {
+      "rank": 9,
+      "user": "MI'INK",
+      "points": 341,
+      "correct": 8,
+      "totalAnswered": 18,
+      "accuracy": 44
+    },
+    {
+      "rank": 10,
+      "user": "👻👻👻",
+      "points": 266,
+      "correct": 7,
+      "totalAnswered": 11,
+      "accuracy": 64
+    },
+    {
+      "rank": 11,
+      "user": "gak ada nama",
+      "points": 156,
+      "correct": 5,
+      "totalAnswered": 20,
+      "accuracy": 25
+    },
+    {
+      "rank": 12,
+      "user": "꧁༒☬KYROX☬༒꧂",
+      "points": 151,
+      "correct": 4,
+      "totalAnswered": 15,
+      "accuracy": 27
+    },
+    {
+      "rank": 13,
+      "user": "Vannn",
+      "points": 142,
+      "correct": 4,
+      "totalAnswered": 23,
+      "accuracy": 17
+    },
+    {
+      "rank": 14,
+      "user": "𝒇𝒆𝒓𝒛𝒙𝒐 𝒎𝒂𝒌𝒉𝒂𝒄𝒆𝒗",
+      "points": 135,
+      "correct": 4,
+      "totalAnswered": 24,
+      "accuracy": 17
+    },
+    {
+      "rank": 15,
+      "user": "♛┈⛧┈┈•༶",
+      "points": 75,
+      "correct": 4,
+      "totalAnswered": 14,
+      "accuracy": 29
+    },
+    {
+      "rank": 16,
+      "user": "ɐpɐɯ",
+      "points": 70,
+      "correct": 2,
+      "totalAnswered": 3,
+      "accuracy": 67
+    },
+    {
+      "rank": 17,
+      "user": "teduh",
+      "points": 62,
+      "correct": 2,
+      "totalAnswered": 3,
+      "accuracy": 67
+    },
+    {
+      "rank": 18,
+      "user": "cipau",
+      "points": 55,
+      "correct": 2,
+      "totalAnswered": 3,
+      "accuracy": 67
+    },
+    {
+      "rank": 19,
+      "user": "aqila 🐣🐣",
+      "points": 55,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 20,
+      "user": "ExRizz💢",
+      "points": 54,
+      "correct": 2,
+      "totalAnswered": 2,
+      "accuracy": 100
+    },
+    {
+      "rank": 21,
+      "user": "DiTT_🤟zin",
+      "points": 34,
+      "correct": 1,
+      "totalAnswered": 2,
+      "accuracy": 50
+    },
+    {
+      "rank": 22,
+      "user": "Vincent Tiktok",
+      "points": 29,
+      "correct": 1,
+      "totalAnswered": 4,
+      "accuracy": 25
+    },
+    {
+      "rank": 23,
+      "user": "aldo",
+      "points": 18,
+      "correct": 1,
+      "totalAnswered": 3,
+      "accuracy": 33
+    },
+    {
+      "rank": 24,
+      "user": "Ecl1psedツ",
+      "points": 0,
+      "correct": 5,
+      "totalAnswered": 7,
+      "accuracy": 71
+    },
+    {
+      "rank": 25,
+      "user": "archivevivn_°",
+      "points": 0,
+      "correct": 4,
+      "totalAnswered": 5,
+      "accuracy": 80
+    },
+    {
+      "rank": 26,
+      "user": "Increadible",
+      "points": 0,
+      "correct": 4,
+      "totalAnswered": 4,
+      "accuracy": 100
+    },
+    {
+      "rank": 27,
+      "user": "Muhammad Rizaal R",
+      "points": 0,
+      "correct": 4,
+      "totalAnswered": 11,
+      "accuracy": 36
+    },
+    {
+      "rank": 28,
+      "user": "erik",
+      "points": 0,
+      "correct": 4,
+      "totalAnswered": 5,
+      "accuracy": 80
+    },
+    {
+      "rank": 29,
+      "user": "anjalika",
+      "points": 0,
+      "correct": 4,
+      "totalAnswered": 9,
+      "accuracy": 44
+    },
+    {
+      "rank": 30,
+      "user": "alishaa",
+      "points": 0,
+      "correct": 4,
+      "totalAnswered": 4,
+      "accuracy": 100
+    },
+    {
+      "rank": 31,
+      "user": "LISANEE | Mengenal Bahasa Arab",
+      "points": 0,
+      "correct": 4,
+      "totalAnswered": 4,
+      "accuracy": 100
+    },
+    {
+      "rank": 32,
+      "user": "kucing hekel bernama hannan",
+      "points": 0,
+      "correct": 3,
+      "totalAnswered": 5,
+      "accuracy": 60
+    },
+    {
+      "rank": 33,
+      "user": "𝘿𝙞𝙣𝙬𝟭𝙣",
+      "points": 0,
+      "correct": 3,
+      "totalAnswered": 3,
+      "accuracy": 100
+    },
+    {
+      "rank": 34,
+      "user": "Celiendra Nugroho",
+      "points": 0,
+      "correct": 3,
+      "totalAnswered": 3,
+      "accuracy": 100
+    },
+    {
+      "rank": 35,
+      "user": "KuPaw!!",
+      "points": 0,
+      "correct": 3,
+      "totalAnswered": 4,
+      "accuracy": 75
+    },
+    {
+      "rank": 36,
+      "user": "pajarrr🔞.",
+      "points": 0,
+      "correct": 3,
+      "totalAnswered": 5,
+      "accuracy": 60
+    },
+    {
+      "rank": 37,
+      "user": "Kiki Eliza",
+      "points": 0,
+      "correct": 3,
+      "totalAnswered": 3,
+      "accuracy": 100
+    },
+    {
+      "rank": 38,
+      "user": "bubakibaboo",
+      "points": 0,
+      "correct": 3,
+      "totalAnswered": 3,
+      "accuracy": 100
+    },
+    {
+      "rank": 39,
+      "user": "𐙚Isttt",
+      "points": 0,
+      "correct": 3,
+      "totalAnswered": 6,
+      "accuracy": 50
+    },
+    {
+      "rank": 40,
+      "user": "scc`yyazz",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 4,
+      "accuracy": 50
+    },
+    {
+      "rank": 41,
+      "user": "carissa_pn",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 4,
+      "accuracy": 50
+    },
+    {
+      "rank": 42,
+      "user": "Rii.",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 3,
+      "accuracy": 67
+    },
+    {
+      "rank": 43,
+      "user": "Vorte...",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 4,
+      "accuracy": 50
+    },
+    {
+      "rank": 44,
+      "user": "❓",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 4,
+      "accuracy": 50
+    },
+    {
+      "rank": 45,
+      "user": "￴ ￴ ￴ ￴ ￴ ￴ ￴ ￴ ￴ ￴ ￴ ￴ ￴ ￴",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 5,
+      "accuracy": 40
+    },
+    {
+      "rank": 46,
+      "user": "cupicupi",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 3,
+      "accuracy": 67
+    },
+    {
+      "rank": 47,
+      "user": "GAMING LOL",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 2,
+      "accuracy": 100
+    },
+    {
+      "rank": 48,
+      "user": "scorpio1111😜",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 2,
+      "accuracy": 100
+    },
+    {
+      "rank": 49,
+      "user": "𝙍𝙞𝙯𝙯🚀",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 6,
+      "accuracy": 33
+    },
+    {
+      "rank": 50,
+      "user": "lyya",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 3,
+      "accuracy": 67
+    },
+    {
+      "rank": 51,
+      "user": "Riell.",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 3,
+      "accuracy": 67
+    },
+    {
+      "rank": 52,
+      "user": "𝖒𝖎𝖊𝖗𝖆𝖆",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 2,
+      "accuracy": 100
+    },
+    {
+      "rank": 53,
+      "user": "Beautiful_NAD🌟💖",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 3,
+      "accuracy": 67
+    },
+    {
+      "rank": 54,
+      "user": "darmawandarmawan7138",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 3,
+      "accuracy": 67
+    },
+    {
+      "rank": 55,
+      "user": "anii",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 3,
+      "accuracy": 67
+    },
+    {
+      "rank": 56,
+      "user": "Exlrs",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 3,
+      "accuracy": 67
+    },
+    {
+      "rank": 57,
+      "user": "adityaa✌️",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 3,
+      "accuracy": 67
+    },
+    {
+      "rank": 58,
+      "user": "Angel",
+      "points": 0,
+      "correct": 2,
+      "totalAnswered": 4,
+      "accuracy": 50
+    },
+    {
+      "rank": 59,
+      "user": "ssapi_6",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 60,
+      "user": "ayahe silvi",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 2,
+      "accuracy": 50
+    },
+    {
+      "rank": 61,
+      "user": "Zamss💦❄️",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 2,
+      "accuracy": 50
+    },
+    {
+      "rank": 62,
+      "user": "ririssss",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 63,
+      "user": "✨",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 2,
+      "accuracy": 50
+    },
+    {
+      "rank": 64,
+      "user": "Bagasalramadn_",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 8,
+      "accuracy": 13
+    },
+    {
+      "rank": 65,
+      "user": "cak sul",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 66,
+      "user": "Keizo 2",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 2,
+      "accuracy": 50
+    },
+    {
+      "rank": 67,
+      "user": "prandas(none⛪⛪⛪",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 3,
+      "accuracy": 33
+    },
+    {
+      "rank": 68,
+      "user": "del🫧",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 3,
+      "accuracy": 33
+    },
+    {
+      "rank": 69,
+      "user": "oyama. goib🥶✌🏻💫",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 2,
+      "accuracy": 50
+    },
+    {
+      "rank": 70,
+      "user": "PP RAMADHAN 2027",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 2,
+      "accuracy": 50
+    },
+    {
+      "rank": 71,
+      "user": ".",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 3,
+      "accuracy": 33
+    },
+    {
+      "rank": 72,
+      "user": "Ridwan",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 73,
+      "user": "Hyu",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 74,
+      "user": "ABANG²AN MNC",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 75,
+      "user": "🪼",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 76,
+      "user": "_lynnz🤍",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 77,
+      "user": "Gwen_Stacy ★☆☆",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 2,
+      "accuracy": 50
+    },
+    {
+      "rank": 78,
+      "user": "zakkyyyperdanaa",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 2,
+      "accuracy": 50
+    },
+    {
+      "rank": 79,
+      "user": "Faqih✌🏻.",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 80,
+      "user": "💤",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 2,
+      "accuracy": 50
+    },
+    {
+      "rank": 81,
+      "user": "Al Fauzan Education",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 82,
+      "user": "Mei",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 2,
+      "accuracy": 50
+    },
+    {
+      "rank": 83,
+      "user": "Scorpio♏️",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 84,
+      "user": "viann",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 2,
+      "accuracy": 50
+    },
+    {
+      "rank": 85,
+      "user": "★Fikri ★",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 86,
+      "user": "— Fahzz Kazueé",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 2,
+      "accuracy": 50
+    },
+    {
+      "rank": 87,
+      "user": "R 9",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 88,
+      "user": "LTX_Rexx",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 2,
+      "accuracy": 50
+    },
+    {
+      "rank": 89,
+      "user": "_𝚔3𝚟𝚒𝚗",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 90,
+      "user": "⋆. 𐙚˚࿔𝗔𝜗𝜚˚",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 91,
+      "user": "sàndi",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 92,
+      "user": "JULLL_",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 93,
+      "user": "S A N Z",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 94,
+      "user": "PLK",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 2,
+      "accuracy": 50
+    },
+    {
+      "rank": 95,
+      "user": "Diamonds",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 96,
+      "user": "adnan",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 97,
+      "user": "ademola lookman",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 98,
+      "user": "zebs",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 99,
+      "user": "️",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 100,
+      "user": "-_-",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 101,
+      "user": "Icha Marinda",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 102,
+      "user": "💥👑",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 2,
+      "accuracy": 50
+    },
+    {
+      "rank": 103,
+      "user": "Divya Aprilia",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 2,
+      "accuracy": 50
+    },
+    {
+      "rank": 104,
+      "user": "?",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 105,
+      "user": "rizz🤓",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 106,
+      "user": "dyuamy",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 107,
+      "user": "meow",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 108,
+      "user": "السلام عليكم",
+      "points": 0,
+      "correct": 1,
+      "totalAnswered": 1,
+      "accuracy": 100
+    },
+    {
+      "rank": 109,
+      "user": "es di Alaska",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 110,
+      "user": "𝐈'𝐌 𝐑𝐎𝐁𝐄𝐑𝐓𝐎",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 4,
+      "accuracy": 0
+    },
+    {
+      "rank": 111,
+      "user": "—𝘿𝙞𝙡𝐳𝐙𝐳`🇦🇱🦅",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 112,
+      "user": "Iqbal Al-Azhar",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 113,
+      "user": "Hamz 🏀",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 114,
+      "user": "𝙮𝙩𝙩𝙖",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 5,
+      "accuracy": 0
+    },
+    {
+      "rank": 115,
+      "user": "kjt",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 116,
+      "user": "Danz/el",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 117,
+      "user": "???",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 118,
+      "user": "yud ܓܓܛܓ",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 119,
+      "user": "Gass😹⚡",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 3,
+      "accuracy": 0
+    },
+    {
+      "rank": 120,
+      "user": "ܛܔܮܛ",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 121,
+      "user": "A",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 122,
+      "user": "idk?",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 123,
+      "user": "cit idc",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 124,
+      "user": "🥀🥀🫀⚡",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 125,
+      "user": "pemain bf",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 126,
+      "user": "Reyyy🕸️",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 127,
+      "user": "cit?? are you oky??.",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 128,
+      "user": "sapidermen67",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 129,
+      "user": "Mark Karouw",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 130,
+      "user": "Kib4ck",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 2,
+      "accuracy": 0
+    },
+    {
+      "rank": 131,
+      "user": "Dodik",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 132,
+      "user": "agann",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 133,
+      "user": "Rehahahahan.",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 134,
+      "user": "hai",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 135,
+      "user": "user95839940868",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 4,
+      "accuracy": 0
+    },
+    {
+      "rank": 136,
+      "user": "케일 Kàell gòk",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 137,
+      "user": "làanz plbów",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 2,
+      "accuracy": 0
+    },
+    {
+      "rank": 138,
+      "user": "Riotwanzzz#",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 139,
+      "user": "Enny Rustiana",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 140,
+      "user": "milk",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 141,
+      "user": "💤 🕸️🚀♣️",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 4,
+      "accuracy": 0
+    },
+    {
+      "rank": 142,
+      "user": "boru siapudan sagala",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 143,
+      "user": "JN8804",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 144,
+      "user": "Sny",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 145,
+      "user": "epollam",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 146,
+      "user": "Yanz〆ܓܓܛܓ",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 3,
+      "accuracy": 0
+    },
+    {
+      "rank": 147,
+      "user": "H4P!T_xyz",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 2,
+      "accuracy": 0
+    },
+    {
+      "rank": 148,
+      "user": "KMU GPP KYOU?",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 149,
+      "user": "farr25",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 150,
+      "user": "Magel Haens",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 2,
+      "accuracy": 0
+    },
+    {
+      "rank": 151,
+      "user": "YogaSlebewww",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 3,
+      "accuracy": 0
+    },
+    {
+      "rank": 152,
+      "user": "cun",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 153,
+      "user": "Niputu Candr a",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 2,
+      "accuracy": 0
+    },
+    {
+      "rank": 154,
+      "user": "Suka Bahas AI | Risboost.com",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 155,
+      "user": "Apa An Dah",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 156,
+      "user": "fawwaz",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 157,
+      "user": "ii Fahriza",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 158,
+      "user": "foreveryearner.9",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 159,
+      "user": "Nji_Ibukey84",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 160,
+      "user": "samudra 77",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 2,
+      "accuracy": 0
+    },
+    {
+      "rank": 161,
+      "user": "yahya",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 2,
+      "accuracy": 0
+    },
+    {
+      "rank": 162,
+      "user": "-anwapra-",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 163,
+      "user": "a",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    },
+    {
+      "rank": 164,
+      "user": "DAFA",
+      "points": 0,
+      "correct": 0,
+      "totalAnswered": 1,
+      "accuracy": 0
+    }
+  ]
+}

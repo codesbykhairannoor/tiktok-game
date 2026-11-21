@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamer Control Room - Kuis CPNS TikTok Live</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <style>
+        :root {
+            --bg-page: #0f172a;
+            --card-bg: #1e293b;
+            --card-border: #334155;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #0284c7;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --purple: #8b5cf6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--card-bg);
+            border: 2px solid var(--card-border);
+            padding: 16px 24px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+        }
+
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .header-title h1 {
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: -0.3px;
+        }
+
+        .header-title p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 800;
+            background: #374151;
+            color: #d1d5db;
+        }
+
+        .status-badge.online {
+            background: #064e3b;
+            color: #6ee7b7;
+            border: 1.5px solid #10b981;
+        }
+
+        .status-badge.waiting {
+            background: #451a03;
+            color: #fde68a;
+            border: 1.5px solid #f59e0b;
+        }
+
+        .status-badge.waiting .pulse-dot {
+            background: #f59e0b;
+            box-shadow: 0 0 10px #f59e0b;
+        }
+
+        .status-badge.connecting {
+            background: #0c4a6e;
+            color: #bae6fd;
+            border: 1.5px solid #0284c7;
+        }
+
+        .status-badge.connecting .pulse-dot {
+            background: #0284c7;
+            box-shadow: 0 0 10px #0284c7;
+        }
+
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #9ca3af;
+        }
+
+        .status-badge.online .pulse-dot {
+            background: #10b981;
+            box-shadow: 0 0 10px #10b981;
+        }
+
+        .grid-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 2px solid var(--card-border);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 10px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .input-group input {
+            flex: 1;
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: 1.5px solid var(--card-border);
+            background: #0b1120;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border-color: var(--primary);
+        }
+
+        button {
+            padding: 11px 18px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        button:active {
+            transform: scale(0.97);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: #0369a1;
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: #ffffff;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: #ffffff;
+        }
+
+        .btn-warning {
+            background: var(--warning);
+            color: #1e293b;
+        }
+
+        .btn-purple {
+            background: var(--purple);
+            color: #ffffff;
+        }
+
+        .btn-neutral {
+            background: #334155;
+            color: #f8fafc;
+        }
+
+        .btn-neutral:hover {
+            background: #475569;
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .button-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .audio-slider-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #0b1120;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+        }
+
+        .audio-slider-row input[type="range"] {
+            flex: 1;
+            margin: 0 14px;
+            cursor: pointer;
+        }
+
+        .question-preview-box {
+            background: #0b1120;
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 14px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .live-log-container {
+            background: #0b1120;
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 12px;
+            height: 180px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .log-entry {
+            padding: 4px 8px;
+            border-radius: 6px;
+            background: #1e293b;
+            color: #cbd5e1;
+        }
+
+        .log-entry.chat {
+            color: #38bdf8;
+        }
+
+        .log-entry.gift {
+            color: #fbbf24;
+            background: #451a03;
+        }
+
+        .log-entry.system {
+            color: #a7f3d0;
+        }
+
+        .url-box {
+            background: #0b1120;
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 10px 14px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header-bar">
+        <div class="header-title">
+            <span style="font-size: 32px;">🎛️</span>
+            <div>
+                <h1>STREAMER CONTROL ROOM</h1>
+                <p>Simulasi CAT SKD CPNS 2026 • Panel Terpisah Bebas Bocor di OBS</p>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <a href="/leaderboard-card.html" target="_blank"
+                style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #0f172a; font-weight: 900; font-size: 13.5px; padding: 8px 16px; border-radius: 8px; text-decoration: none; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(245,158,11,0.3);">
+                🏆 Buka Hall of Fame / Top Scorer (Poster Video)
+            </a>
+            <div class="status-badge" id="live-status-pill">
+                <div class="pulse-dot"></div>
+                <span id="live-status-text">OFFLINE</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="grid-dashboard">
+
+        <!-- 1. KONEKSI TIKTOK LIVE -->
+        <div class="card">
+            <div class="card-title">
+                <span>📡</span> Akun TikTok Live Terhubung
+            </div>
+
+            <!-- VERIFIED PROFILE BOX -->
+            <div id="streamer-profile-card"
+                style="display: flex; align-items: center; gap: 14px; background: #0b1120; padding: 12px 16px; border-radius: 12px; border: 1.5px solid #0284c7;">
+                <img id="streamer-avatar-img"
+                    src="https://p16-common-sign.tiktokcdn.com/tos-alisg-avt-0068/6e658634da730ba65fa01a5b7afb9e88~tplv-tiktokx-cropcenter:100:100.jpeg?dr=14579&refresh_token=1cc24fa2&x-expires=1794211200&x-signature=onqnWrGd%2BA%2BURGTOIhIX9G56hYA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=fdd36af4&idc=my2"
+                    alt="TikTok Profile"
+                    style="width: 52px; height: 52px; border-radius: 50%; border: 2.5px solid #10b981; object-fit: cover; box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);">
+                <div style="flex: 1;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <strong id="streamer-nickname"
+                            style="font-size: 16px; color: #f8fafc;">maritumbuhbersama</strong>
+                        <span
+                            style="background: #0284c7; color: #fff; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 10px;">TERVERIFIKASI</span>
+                    </div>
+                    <div style="font-size: 13px; color: #38bdf8; font-weight: 700;" id="streamer-displayid">
+                        @spillsabi.id</div>
+                    <div style="font-size: 11px; color: #94a3b8; margin-top: 2px;" id="streamer-roomid">Room ID:
+                        7683898513680190215</div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="tiktok-username-input" value="spillsabi.id" placeholder="Username TikTok">
+                <button class="btn-primary" onclick="connectLive()">🔗 Tautkan Ulang</button>
+            </div>
+            <div class="url-box">
+                <span style="color: var(--text-muted);">URL Browser Source OBS:</span>
+                <strong style="color: #38bdf8;">http://localhost:3000</strong>
+            </div>
+        </div>
+
+        <!-- 2. GAME MASTER KUIS -->
+        <div class="card">
+            <div class="card-title">
+                <span>🎮</span> Kontrol Soal & Game
+            </div>
+            <div class="question-preview-box">
+                <div style="font-size: 12px; color: var(--warning); font-weight: 800; margin-bottom: 4px;"
+                    id="soal-meta-label">
+                    RONDE #1 • MEMUAT SOAL...
+                </div>
+                <div id="soal-text-preview" style="font-weight: 700;">
+                    Menunggu data soal dari server...
+                </div>
+            </div>
+            <div class="button-grid">
+                <button class="btn-primary" onclick="nextQuestion()">⏩ Ganti Soal</button>
+                <button class="btn-neutral" onclick="prevQuestion()">⏮️ Soal Sebelumnya</button>
+                <button class="btn-danger" onclick="trigger5050()">🌹 Coret 2 Opsi (50:50)</button>
+                <button class="btn-warning" onclick="resetLeaderboard()">🔄 Reset Skor Peserta</button>
+            </div>
+        </div>
+
+        <!-- 3. SOUNDPAD & MUSIK BGM VIRAL -->
+        <div class="card">
+            <div class="card-title">
+                <span>🔊</span> BGM Broadcast & Soundpad Kuis
+            </div>
+
+            <div
+                style="background: #0b1120; padding: 12px 14px; border-radius: 10px; border: 1.5px solid #0284c7; display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-size: 13px; font-weight: 700; color: #38bdf8;">🎵 Pilih Musik BGM (Terbukti Viral &
+                    Bebas Hak Cipta):</label>
+                <select id="bgm-track-select" onchange="changeTrack(this.value)"
+                    style="background: #1e293b; color: #fff; border: 1.5px solid #0284c7; padding: 8px 12px; border-radius: 8px; font-size: 13.5px; font-weight: 700; cursor: pointer;">
+                    <option value="monkeys">🐒 Monkeys Spinning (Viral TikTok #1 Dunia - Ceria)</option>
+                    <option value="sneaky">🕵️ Sneaky Snitch (Kuis Teka-Teki Misteri - Kevin MacLeod)</option>
+                    <option value="lofi">☕ Lofi Study Beats (Alpha Wave 70 BPM - Fokus & Tenang)</option>
+                </select>
+            </div>
+
+            <div class="button-grid">
+                <button class="btn-warning" onclick="playSound('ding')">🔔 Bel Kuis</button>
+                <button class="btn-danger" onclick="playSound('buzzer')">❌ Buzzer Salah</button>
+                <button class="btn-success" onclick="playSound('applause')">👏 Sorak Penonton</button>
+                <button class="btn-purple" onclick="playSound('drumroll')">🥁 Drumroll Tegang</button>
+            </div>
+            <div class="audio-slider-row">
+                <span style="font-size: 13px; font-weight: 700;">🔊 Volume BGM:</span>
+                <input type="range" min="0" max="100" value="50" oninput="changeVolume(this.value)">
+                <span id="vol-label" style="font-size: 13px; font-weight: 800; min-width: 35px;">50%</span>
+            </div>
+            <button class="btn-neutral" onclick="toggleBGM()">⏯️ Mute / Unmute Musik Stream</button>
+        </div>
+
+        <!-- 4. HUMAN ANNOUNCER VOICE PACK (DUBBER STUDIO ASLI) -->
+        <div class="card">
+            <div class="card-title">
+                <span>🎙️</span> Announcer Voice Pack (Klip Suara Manusia Asli)
+            </div>
+            <div
+                style="background: #0b1120; padding: 12px 14px; border-radius: 10px; border: 1.5px solid #0284c7; display: flex; flex-direction: column; gap: 10px;">
+                <label
+                    style="display: flex; align-items: center; gap: 10px; font-size: 13.5px; cursor: pointer; color: #f8fafc; background: #0369a1; padding: 9px 12px; border-radius: 8px;">
+                    <input type="checkbox" id="voicepack-enable" checked onchange="toggleVoicePack(this.checked)">
+                    <span>🔊 <strong>Aktifkan Voice Pack Otomatis</strong> (0% Kesan AI • 0ms Delay)</span>
+                </label>
+                <div style="font-size: 12px; color: #94a3b8; line-height: 1.4;">
+                    💡 Berbunyi otomatis di detik-detik penting: <em>Ronde Baru, 10 Detik Terakhir, Waktu Habis + Kunci
+                        Jawaban A/B/C/D/E, dan Terima Kasih Sultan</em>.
+                </div>
+            </div>
+
+            <div style="font-size: 12px; font-weight: 800; color: #38bdf8; margin-top: 4px;">TES KLIP SUARA MANUSIA
+                ASLI:</div>
+            <div class="button-grid">
+                <button class="btn-primary" onclick="playVoiceClip('round_start')">▶️ Ronde Baru</button>
+                <button class="btn-warning" onclick="playVoiceClip('countdown_10s')">▶️ 10 Detik</button>
+                <button class="btn-danger" onclick="playVoiceClip('time_up')">▶️ Waktu Habis</button>
+                <button class="btn-success" onclick="playVoiceClip('correct')">▶️ Jawaban Benar</button>
+                <button class="btn-purple" onclick="playVoiceClip('gift_thanks')">▶️ Makasih Sultan</button>
+                <button class="btn-neutral" onclick="playVoiceClip('opt_c')">▶️ Pilihan C</button>
+            </div>
+            <button class="btn-primary" style="margin-top: 6px;" onclick="nextQuestion()">⏩ Skip Pembahasan & Lanjut
+                Soal</button>
+        </div>
+
+        <!-- 5. ALAT PENUTUPAN LIVE (CLOSING SUITE) -->
+        <div class="card"
+            style="border: 2px solid #f59e0b; background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0f172a 100%);">
+            <div class="card-title" style="color: #f59e0b;">
+                <span>🎬</span> ALAT PENUTUPAN LIVE (CLOSING SUITE)
+            </div>
+            <div style="font-size: 13px; color: #cbd5e1; line-height: 1.4; margin-bottom: 8px;">
+                Gunakan tombol ini saat ingin mengakhiri siaran live secara sopan & terhormat agar penonton tidak kaget
+                dan langsung mem-follow akun!
+            </div>
+            <div class="button-grid" style="grid-template-columns: 1fr 1fr; gap: 8px;">
+                <button class="btn-warning" style="padding: 12px; font-weight: 900;"
+                    onclick="sendClosingCmd('CLOSING_FINAL_3')">
+                    📢 Umumkan 3 Soal Terakhir
+                </button>
+                <button class="btn-danger" style="padding: 12px; font-weight: 900;"
+                    onclick="sendClosingCmd('CLOSING_5MIN')">
+                    ⏱️ Timer 5 Menit Penutupan
+                </button>
+                <button class="btn-success" style="padding: 12px; font-weight: 900; grid-column: span 2;"
+                    onclick="sendClosingCmd('CLOSING_PODIUM')">
+                    🏆 Tampilkan Layar Juara & Pamitan (Grand Finale)
+                </button>
+                <button class="btn-neutral" style="padding: 8px 12px; font-size: 12px;"
+                    onclick="sendClosingCmd('CLOSING_HIDE')">
+                    ❌ Sembunyikan Overlay Penutupan
+                </button>
+                <button class="btn-primary" style="padding: 8px 12px; font-size: 12px;" onclick="toggleScriptModal()">
+                    🎙️ Contekan Kata Pamitan Host
+                </button>
+            </div>
+        </div>
+
+        <!-- 6. SIMULATOR TEST & AUDIT OFFLINE -->
+        <div class="card">
+            <div class="card-title">
+                <span>🧪</span> Simulasi & Uji Coba Offline
+            </div>
+            <div class="button-grid-3">
+                <button class="btn-primary" onclick="simMassVotes()">👥 25 Suara</button>
+                <button class="btn-danger" onclick="simLikes()">❤️ 25 Likes</button>
+                <button class="btn-success" onclick="simChat()">💬 Chat Acak</button>
+                <button class="btn-neutral" onclick="simVote('A')">Jawab A</button>
+                <button class="btn-neutral" onclick="simVote('B')">Jawab B</button>
+                <button class="btn-neutral" onclick="simVote('C')">Jawab C</button>
+                <button class="btn-warning" onclick="simGift('Rose', 1)">🌹 Mawar</button>
+                <button class="btn-warning" onclick="simGift('Coffee', 10)">☕ Kopi</button>
+                <button class="btn-purple" onclick="simGift('Donut', 30)">🍩 Donat</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- LIVE LOG FEED -->
+    <div class="card" style="margin-top: 20px;">
+        <div class="card-title">
+            <span>📋</span> Log Aktivitas Live Real-Time
+        </div>
+        <div class="live-log-container" id="log-container">
+            <div class="log-entry system">[SYSTEM] Streamer Control Room siap. Terhubung ke server game.</div>
+        </div>
+    </div>
+
+    <!-- MASTER AUDIO & TTS ENGINE -->
+    <script src="/js/audio.js?v=18"></script>
+
+    <script>
+        const socket = io();
+
+        function addLog(msg, type = 'system') {
+            const container = document.getElementById('log-container');
+            if (!container) return;
+            const item = document.createElement('div');
+            item.className = `log-entry ${type}`;
+            const time = new Date().toLocaleTimeString();
+            item.innerText = `[${time}] ${msg}`;
+            container.appendChild(item);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        // ================= KONTROL STREAMER =================
+
+        function connectLive() {
+            const user = document.getElementById('tiktok-username-input').value.trim();
+            if (!user) return alert('Ketik username TikTok Anda!');
+            socket.emit('CMD_CONNECT_TIKTOK', user);
+            addLog(`Menghubungkan ke live @${user}...`, 'system');
+        }
+
+        function nextQuestion() {
+            socket.emit('CMD_NEXT_QUESTION');
+            addLog('Perintah: Ganti ke soal berikutnya', 'system');
+        }
+
+        function prevQuestion() {
+            socket.emit('CMD_PREV_QUESTION');
+            addLog('Perintah: Kembali ke soal sebelumnya', 'system');
+        }
+
+        function trigger5050() {
+            socket.emit('CMD_TRIGGER_5050');
+            addLog('Perintah: Aktifkan 50:50 (Coret 2 opsi salah)', 'system');
+        }
+
+        function resetLeaderboard() {
+            if (confirm('Yakin ingin mereset papan peringkat peserta ke 0?')) {
+                socket.emit('CMD_RESET_LEADERBOARD');
+                addLog('Perintah: Reset papan peringkat', 'system');
+            }
+        }
+
+        function playSound(effect) {
+            socket.emit('CMD_PLAY_SOUNDPAD', effect);
+            addLog(`Soundpad dibunyikan: ${effect}`, 'system');
+        }
+
+        function changeVolume(val) {
+            document.getElementById('vol-label').innerText = `${val}%`;
+            socket.emit('CMD_SET_BGM_VOLUME', val / 100);
+        }
+
+        function changeTrack(trackKey) {
+            socket.emit('CMD_SET_BGM_TRACK', trackKey);
+            addLog(`Ganti musik BGM ke: ${trackKey}`, 'system');
+        }
+
+        function toggleBGM() {
+            socket.emit('CMD_TOGGLE_BGM');
+            addLog('Toggle musik latar broadcast', 'system');
+        }
+
+        // ================= KONTROL VOICE PACK ANNOUNCER =================
+
+        function toggleVoicePack(enabled) {
+            socket.emit('CMD_SET_VOICEPACK_ENABLED', { enabled: enabled });
+            addLog(`Voice Pack Announcer: ${enabled ? 'AKTIF' : 'NONAKTIF'}`, 'system');
+        }
+
+        function playVoiceClip(clipName) {
+            socket.emit('CMD_PLAY_VOICEPACK', { clip: clipName });
+            addLog(`Tes klip suara studio: ${clipName}`, 'system');
+        }
+
+        function simChatGreeting() {
+            const demoUsers = ['teduh', 'Lapak Batre', 'Cucumber', 'Siti_Aisyah', 'Budi_Santoso'];
+            const randomUser = demoUsers[Math.floor(Math.random() * demoUsers.length)];
+            socket.emit('CMD_SIMULATE_CHAT', {
+                user: randomUser,
+                text: 'Halo min, izin gabung belajar ya!'
+            });
+            addLog(`Simulasi penonton join & chat: @${randomUser}`, 'chat');
+        }
+
+        // ================= SIMULASI OFFLINE =================
+
+        function simMassVotes() {
+            socket.emit('CMD_SIMULATE_MASS_VOTES');
+            addLog('Simulasi: 25 suara masuk sekaligus!', 'chat');
+        }
+
+        function simLikes() {
+            socket.emit('CMD_SIMULATE_LIKE');
+            addLog('Simulasi: 25 likes diterima!', 'chat');
+        }
+
+        function simChat() {
+            socket.emit('CMD_SIMULATE_CHAT', {});
+            addLog('Simulasi: Chat acak masuk', 'chat');
+        }
+
+        function simVote(letter) {
+            socket.emit('CMD_SIMULATE_CHAT', { user: 'Peserta_Demo', text: letter });
+            addLog(`Simulasi: @Peserta_Demo menjawab [ ${letter} ]`, 'chat');
+        }
+
+        function simGift(name, diamonds) {
+            socket.emit('CMD_SIMULATE_GIFT', { user: 'Sultan_Demo', giftName: name, diamonds: diamonds });
+            addLog(`Simulasi: @Sultan_Demo mengirim gift ${name} (${diamonds} koin)`, 'gift');
+        }
+
+        function updateProfileDisplay(profile) {
+            if (!profile) return;
+            const img = document.getElementById('streamer-avatar-img');
+            const nick = document.getElementById('streamer-nickname');
+            const user = document.getElementById('streamer-displayid');
+            const room = document.getElementById('streamer-roomid');
+
+            if (img && profile.avatar) img.src = profile.avatar;
+            if (nick && profile.nickname) nick.innerText = profile.nickname;
+            if (user && profile.username) user.innerText = `@${profile.username}`;
+            if (room && profile.roomId) room.innerText = `Room ID: ${profile.roomId}`;
+        }
+
+        // ================= LISTEN TO SERVER =================
+
+        socket.on('INIT_STATE', data => {
+            updateStatus(data.tiktokStatus, data.tiktokUser);
+            if (data.tiktokProfile) updateProfileDisplay(data.tiktokProfile);
+            if (data.currentQuestion) {
+                updateQuestionDisplay(data.currentQuestion);
+            }
+        });
+
+        socket.on('TIKTOK_PROFILE', prof => {
+            updateProfileDisplay(prof);
+        });
+
+        socket.on('TIKTOK_STATUS', data => {
+            updateStatus(data.status, data.username);
+            if (data.profile) updateProfileDisplay(data.profile);
+            addLog(`Status TikTok: ${data.status} (@${data.username || ''})`, 'system');
+        });
+
+        socket.on('QUESTION_START', q => {
+            updateQuestionDisplay(q);
+            addLog(`Soal baru dimulai: #${q.index} - ${q.kategori}`, 'system');
+        });
+
+        socket.on('CHAT_MESSAGE', data => {
+            addLog(`@${data.user}: ${data.text}`, 'chat');
+        });
+
+        socket.on('REWARD_GIFT_EVENT', r => {
+            addLog(`🎁 @${r.sender} kirim ${r.giftName} (${r.diamonds} koin) -> ${r.action}`, 'gift');
+        });
+
+        function updateStatus(status, username) {
+            const pill = document.getElementById('live-status-pill');
+            const text = document.getElementById('live-status-text');
+            if (status === 'CONNECTED') {
+                pill.className = 'status-badge online';
+                text.innerText = `TERHUBUNG LIVE (@${username})`;
+            } else if (status === 'WAITING_LIVE') {
+                pill.className = 'status-badge waiting';
+                text.innerText = `MENUNGGU GO LIVE (@${username})`;
+            } else if (status === 'CONNECTING') {
+                pill.className = 'status-badge connecting';
+                text.innerText = `MEMERIKSA SIARAN (@${username})...`;
+            } else {
+                pill.className = 'status-badge';
+                text.innerText = 'OFFLINE';
+            }
+        }
+
+        function updateQuestionDisplay(q) {
+            document.getElementById('soal-meta-label').innerText = `RONDE #${q.index} • KATEGORI: ${q.kategori}`;
+            document.getElementById('soal-text-preview').innerText = q.soal;
+        }
+
+        // ================= KONTROL PENUTUPAN LIVE =================
+        function sendClosingCmd(cmd) {
+            socket.emit('CMD_PLAY_SOUNDPAD', cmd);
+            addLog(`Perintah Penutupan Terkirim: ${cmd}`, 'system');
+        }
+
+        function toggleScriptModal() {
+            const m = document.getElementById('script-modal');
+            if (m) {
+                m.style.display = m.style.display === 'flex' ? 'none' : 'flex';
+            }
+        }
+    </script>
+
+    <!-- MODAL CONTEKAN KATA PAMITAN -->
+    <div id="script-modal"
+        style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 99999; align-items: center; justify-content: center; padding: 20px;">
+        <div
+            style="background: #0f172a; border: 3px solid #38bdf8; border-radius: 20px; max-width: 620px; width: 100%; padding: 25px; color: #ffffff; box-shadow: 0 10px 40px rgba(0,0,0,0.9);">
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #334155; padding-bottom: 12px; margin-bottom: 15px;">
+                <h2 style="font-size: 18px; color: #38bdf8; font-weight: 900;">🎙️ CONTEKAN UCAPAN PAMITAN STREAMER</h2>
+                <button onclick="toggleScriptModal()"
+                    style="background: transparent; border: none; color: #94a3b8; font-size: 24px; cursor: pointer;">✕</button>
+            </div>
+            <div
+                style="background: #1e293b; padding: 18px; border-radius: 12px; font-size: 15px; line-height: 1.65; color: #f1f5f9; border-left: 4px solid #f59e0b;">
+                "Halo teman-teman pejuang CPNS semuanya! Terima kasih banyak sudah belajar bareng dan aktif menjawab
+                selama lebih dari 1 jam hari ini!<br><br>
+                Kalian semua luar biasa dan semangatnya keren banget! Selamat untuk para top scorer di live show hari
+                ini! 👏🥳<br><br>
+                Sebelum saya pamit undur diri untuk istirahat, <strong>jangan lupa klik tombol FOLLOW di atas
+                    ya</strong>, biar besok pas kita mulai live kuis TIU berhitung cepat lagi, kalian langsung dapat
+                notifikasinya!<br><br>
+                Terima kasih juga buat para donatur yang sudah kirim gift mawar, kopi, dan donat malam ini! Sampai
+                ketemu di live berikutnya, sukses selalu dan semoga NIP CPNS 2026 tembus! Selamat beristirahat
+                teman-teman! 👋"
+            </div>
+            <div style="margin-top: 18px; text-align: right;">
+                <button class="btn-primary" onclick="toggleScriptModal()"
+                    style="padding: 10px 22px; font-weight: 900;">Tutup Contekan</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

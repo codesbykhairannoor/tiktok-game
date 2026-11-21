@@ -1,0 +1,2240 @@
+[
+  {
+    "id": "geo_001",
+    "ronde": 1,
+    "kategori": "Geografi & Peta Indonesia",
+    "soal": "Garis khatulistiwa di Indonesia tepat melintasi kota...",
+    "opsi": {
+      "A": "Pontianak",
+      "B": "Padang",
+      "C": "Balikpapan",
+      "D": "Manado"
+    },
+    "jawaban": "A",
+    "pembahasan": "Kota Pontianak di Kalimantan Barat tepat dilintasi garis khatulistiwa dan memiliki Tugu Khatulistiwa.",
+    "aliases": [
+      "pontianak",
+      "a"
+    ]
+  },
+  {
+    "id": "geo_002",
+    "ronde": 1,
+    "kategori": "Geografi & Peta Indonesia",
+    "soal": "Ibu kota Provinsi Jawa Barat adalah kota...",
+    "opsi": {
+      "A": "Bogor",
+      "B": "Bandung",
+      "C": "Cirebon",
+      "D": "Bekasi"
+    },
+    "jawaban": "B",
+    "pembahasan": "Ibu kota Provinsi Jawa Barat adalah Kota Bandung yang dijuluki Kota Kembang.",
+    "aliases": [
+      "bandung",
+      "b"
+    ]
+  },
+  {
+    "id": "geo_003",
+    "ronde": 1,
+    "kategori": "Geografi & Peta Indonesia",
+    "soal": "Candi Borobudur yang megah terletak di provinsi...",
+    "opsi": {
+      "A": "D.I. Yogyakarta",
+      "B": "Jawa Timur",
+      "C": "Jawa Tengah",
+      "D": "Bali"
+    },
+    "jawaban": "C",
+    "pembahasan": "Candi Borobudur terletak di Kabupaten Magelang, Provinsi Jawa Tengah.",
+    "aliases": [
+      "jawa tengah",
+      "jateng",
+      "magelang",
+      "c"
+    ]
+  },
+  {
+    "id": "geo_004",
+    "ronde": 1,
+    "kategori": "Geografi & Peta Indonesia",
+    "soal": "Danau vulkanik terbesar di Indonesia dan Asia Tenggara adalah...",
+    "opsi": {
+      "A": "Danau Singkarak",
+      "B": "Danau Poso",
+      "C": "Danau Toba",
+      "D": "Danau Sentani"
+    },
+    "jawaban": "C",
+    "pembahasan": "Danau Toba di Sumatera Utara adalah danau vulkanik terbesar di Asia Tenggara dengan Pulau Samosir di tengahnya.",
+    "aliases": [
+      "danau toba",
+      "toba",
+      "c"
+    ]
+  },
+  {
+    "id": "geo_005",
+    "ronde": 1,
+    "kategori": "Geografi & Peta Indonesia",
+    "soal": "Selat yang memisahkan Pulau Jawa dan Pulau Sumatera adalah...",
+    "opsi": {
+      "A": "Selat Sunda",
+      "B": "Selat Malaka",
+      "C": "Selat Bali",
+      "D": "Selat Makassar"
+    },
+    "jawaban": "A",
+    "pembahasan": "Selat Sunda memisahkan Pulau Jawa dan Pulau Sumatera, tempat Gunung Krakatau berada.",
+    "aliases": [
+      "selat sunda",
+      "sunda",
+      "a"
+    ]
+  },
+  {
+    "id": "geo_006",
+    "ronde": 1,
+    "kategori": "Geografi & Peta Indonesia",
+    "soal": "Gunung tertinggi di Indonesia yang diselimuti salju abadi adalah...",
+    "opsi": {
+      "A": "Gunung Semeru",
+      "B": "Puncak Jaya",
+      "C": "Gunung Rinjani",
+      "D": "Gunung Kerinci"
+    },
+    "jawaban": "B",
+    "pembahasan": "Puncak Jaya (Carstensz Pyramid) di Papua memiliki ketinggian 4.884 mdpl dengan salju abadi.",
+    "aliases": [
+      "puncak jaya",
+      "carstensz",
+      "jaya",
+      "b"
+    ]
+  },
+  {
+    "id": "geo_007",
+    "ronde": 1,
+    "kategori": "Geografi & Peta Indonesia",
+    "soal": "Pulau di Indonesia yang terkenal sebagai habitat asli Komodo adalah...",
+    "opsi": {
+      "A": "Pulau Komodo",
+      "B": "Pulau Weh",
+      "C": "Pulau Seribu",
+      "D": "Pulau Nias"
+    },
+    "jawaban": "A",
+    "pembahasan": "Pulau Komodo dan Pulau Rinca di Nusa Tenggara Timur adalah habitat asli kadal raksasa Komodo.",
+    "aliases": [
+      "pulau komodo",
+      "komodo",
+      "ntt",
+      "a"
+    ]
+  },
+  {
+    "id": "geo_008",
+    "ronde": 1,
+    "kategori": "Geografi & Peta Indonesia",
+    "soal": "Sungai terpanjang di Indonesia yang berada di Kalimantan Barat adalah...",
+    "opsi": {
+      "A": "Sungai Musi",
+      "B": "Sungai Kapuas",
+      "C": "Sungai Barito",
+      "D": "Sungai Mahakam"
+    },
+    "jawaban": "B",
+    "pembahasan": "Sungai Kapuas dengan panjang sekitar 1.143 km merupakan sungai terpanjang di Indonesia.",
+    "aliases": [
+      "sungai kapuas",
+      "kapuas",
+      "b"
+    ]
+  },
+  {
+    "id": "geo_009",
+    "ronde": 1,
+    "kategori": "Geografi & Peta Indonesia",
+    "soal": "Indonesia diapit oleh dua samudra besar, yaitu Samudra Pasifik dan...",
+    "opsi": {
+      "A": "Samudra Atlantik",
+      "B": "Samudra Hindia",
+      "C": "Samudra Arktik",
+      "D": "Samudra Antarktika"
+    },
+    "jawaban": "B",
+    "pembahasan": "Secara geografis Indonesia terletak di antara Samudra Hindia dan Samudra Pasifik.",
+    "aliases": [
+      "samudra hindia",
+      "hindia",
+      "b"
+    ]
+  },
+  {
+    "id": "geo_010",
+    "ronde": 1,
+    "kategori": "Geografi & Peta Indonesia",
+    "soal": "Kota Sabang yang menjadi titik 0 kilometer barat Indonesia terletak di provinsi...",
+    "opsi": {
+      "A": "Sumatera Utara",
+      "B": "Aceh",
+      "C": "Riau",
+      "D": "Bengkulu"
+    },
+    "jawaban": "B",
+    "pembahasan": "Kota Sabang di Pulau Weh berada di Provinsi Aceh (Nanggroe Aceh Darussalam).",
+    "aliases": [
+      "aceh",
+      "nad",
+      "sabang",
+      "b"
+    ]
+  },
+  {
+    "id": "ipa_001",
+    "ronde": 2,
+    "kategori": "Sains & Dunia Hewan (IPA)",
+    "soal": "Hewan pemakan daging dalam istilah sains disebut hewan...",
+    "opsi": {
+      "A": "Herbivora",
+      "B": "Karnivora",
+      "C": "Omnivora",
+      "D": "Insektivora"
+    },
+    "jawaban": "B",
+    "pembahasan": "Karnivora adalah golongan hewan pemakan daging seperti singa, harimau, dan elang.",
+    "aliases": [
+      "karnivora",
+      "b"
+    ]
+  },
+  {
+    "id": "ipa_002",
+    "ronde": 2,
+    "kategori": "Sains & Dunia Hewan (IPA)",
+    "soal": "Tumbuhan hijau membuat makanannya sendiri melalui proses...",
+    "opsi": {
+      "A": "Metamorfosis",
+      "B": "Fotosintesis",
+      "C": "Respirasi",
+      "D": "Fermentasi"
+    },
+    "jawaban": "B",
+    "pembahasan": "Fotosintesis adalah proses memasak makanan pada tumbuhan menggunakan klorofil dan cahaya matahari.",
+    "aliases": [
+      "fotosintesis",
+      "b"
+    ]
+  },
+  {
+    "id": "ipa_003",
+    "ronde": 2,
+    "kategori": "Sains & Dunia Hewan (IPA)",
+    "soal": "Hewan yang berkembang biak dengan cara melahirkan dan menyusui disebut...",
+    "opsi": {
+      "A": "Mamalia",
+      "B": "Reptil",
+      "C": "Amfibi",
+      "D": "Aves"
+    },
+    "jawaban": "A",
+    "pembahasan": "Mamalia adalah hewan berdarah panas yang melahirkan dan memiliki kelenjar susu untuk menyusui anaknya.",
+    "aliases": [
+      "mamalia",
+      "a"
+    ]
+  },
+  {
+    "id": "ipa_004",
+    "ronde": 2,
+    "kategori": "Sains & Dunia Hewan (IPA)",
+    "soal": "Katak dan salamander tergolong hewan yang hidup di dua alam, yaitu...",
+    "opsi": {
+      "A": "Reptil",
+      "B": "Amfibi",
+      "C": "Mamalia",
+      "D": "Moluska"
+    },
+    "jawaban": "B",
+    "pembahasan": "Amfibi adalah hewan vertebrata yang dapat hidup di darat dan air, bernapas dengan insang saat berudu dan paru-paru saat dewasa.",
+    "aliases": [
+      "amfibi",
+      "amphibi",
+      "b"
+    ]
+  },
+  {
+    "id": "ipa_005",
+    "ronde": 2,
+    "kategori": "Sains & Dunia Hewan (IPA)",
+    "soal": "Zat hijau pada daun yang berfungsi menyerap cahaya matahari disebut...",
+    "opsi": {
+      "A": "Stomata",
+      "B": "Klorofil",
+      "C": "Epidermis",
+      "D": "Xilem"
+    },
+    "jawaban": "B",
+    "pembahasan": "Klorofil adalah zat hijau daun yang menjadi pigmen utama fotosintesis.",
+    "aliases": [
+      "klorofil",
+      "chlorophyll",
+      "b"
+    ]
+  },
+  {
+    "id": "ipa_006",
+    "ronde": 2,
+    "kategori": "Sains & Dunia Hewan (IPA)",
+    "soal": "Kemampuan bunglon mengubah warna kulit sesuai lingkungannya disebut...",
+    "opsi": {
+      "A": "Autotomi",
+      "B": "Mimikri",
+      "C": "Ekolokasi",
+      "D": "Hibernasi"
+    },
+    "jawaban": "B",
+    "pembahasan": "Mimikri adalah adaptasi bunglon mengubah warna tubuh untuk menyamar dan menghindari musuh.",
+    "aliases": [
+      "mimikri",
+      "b"
+    ]
+  },
+  {
+    "id": "ipa_007",
+    "ronde": 2,
+    "kategori": "Sains & Dunia Hewan (IPA)",
+    "soal": "Hewan yang memutuskan ekornya saat terancam bahaya seperti cecak disebut...",
+    "opsi": {
+      "A": "Autotomi",
+      "B": "Mimikri",
+      "C": "Evolusi",
+      "D": "Regenerasi"
+    },
+    "jawaban": "A",
+    "pembahasan": "Autotomi adalah pelepasan anggota tubuh (ekor cecak) untuk mengelabui pemangsa.",
+    "aliases": [
+      "autotomi",
+      "a"
+    ]
+  },
+  {
+    "id": "ipa_008",
+    "ronde": 2,
+    "kategori": "Sains & Dunia Hewan (IPA)",
+    "soal": "Mamalia terbesar di bumi yang bernapas menggunakan paru-paru adalah...",
+    "opsi": {
+      "A": "Gajah Afrika",
+      "B": "Paus Biru",
+      "C": "Hiu Putih",
+      "D": "Badak Jawa"
+    },
+    "jawaban": "B",
+    "pembahasan": "Paus Biru adalah mamalia laut terbesar di bumi dengan panjang mencapai 30 meter lebih.",
+    "aliases": [
+      "paus biru",
+      "paus",
+      "b"
+    ]
+  },
+  {
+    "id": "ipa_009",
+    "ronde": 2,
+    "kategori": "Sains & Dunia Hewan (IPA)",
+    "soal": "Kelelawar dapat terbang dalam kegelapan malam tanpa menabrak berkat indera...",
+    "opsi": {
+      "A": "Ekolokasi",
+      "B": "Penglihatan inframerah",
+      "C": "Penciuman tajam",
+      "D": "Sensor magnet"
+    },
+    "jawaban": "A",
+    "pembahasan": "Ekolokasi memanfaatkan pantulan gelombang ultrasonik untuk mendeteksi rintangan dan mangsa.",
+    "aliases": [
+      "ekolokasi",
+      "a"
+    ]
+  },
+  {
+    "id": "ipa_010",
+    "ronde": 2,
+    "kategori": "Sains & Dunia Hewan (IPA)",
+    "soal": "Urutan metamorfosis sempurna pada kupu-kupu yang benar adalah...",
+    "opsi": {
+      "A": "Telur - Pupa - Ulat - Kupu",
+      "B": "Telur - Ulat - Kepompong - Kupu",
+      "C": "Ulat - Telur - Kupu - Kepompong",
+      "D": "Telur - Nimfa - Kupu"
+    },
+    "jawaban": "B",
+    "pembahasan": "Metamorfosis kupu-kupu: Telur -> Larva (Ulat) -> Pupa (Kepompong) -> Imago (Kupu-kupu dewasa).",
+    "aliases": [
+      "telur ulat kepompong kupu",
+      "b"
+    ]
+  },
+  {
+    "id": "surya_001",
+    "ronde": 3,
+    "kategori": "Tata Surya & Luar Angkasa",
+    "soal": "Pusat dari tata surya kita yang memancarkan cahaya sendiri adalah...",
+    "opsi": {
+      "A": "Bulan",
+      "B": "Matahari",
+      "C": "Bumi",
+      "D": "Bintang Kejora"
+    },
+    "jawaban": "B",
+    "pembahasan": "Matahari adalah bintang induk di pusat tata surya yang dikelilingi oleh 8 planet.",
+    "aliases": [
+      "matahari",
+      "sun",
+      "b"
+    ]
+  },
+  {
+    "id": "surya_002",
+    "ronde": 3,
+    "kategori": "Tata Surya & Luar Angkasa",
+    "soal": "Planet yang dijuluki 'Planet Merah' dalam tata surya adalah...",
+    "opsi": {
+      "A": "Venus",
+      "B": "Mars",
+      "C": "Merkurius",
+      "D": "Jupiter"
+    },
+    "jawaban": "B",
+    "pembahasan": "Planet Mars tampak kemerahan karena permukaannya banyak mengandung besi oksida (karat).",
+    "aliases": [
+      "mars",
+      "b"
+    ]
+  },
+  {
+    "id": "surya_003",
+    "ronde": 3,
+    "kategori": "Tata Surya & Luar Angkasa",
+    "soal": "Planet terbesar dalam tata surya kita adalah...",
+    "opsi": {
+      "A": "Saturnus",
+      "B": "Jupiter",
+      "C": "Uranus",
+      "D": "Neptunus"
+    },
+    "jawaban": "B",
+    "pembahasan": "Jupiter adalah raksasa gas sekaligus planet dengan ukuran paling besar di tata surya.",
+    "aliases": [
+      "jupiter",
+      "b"
+    ]
+  },
+  {
+    "id": "surya_004",
+    "ronde": 3,
+    "kategori": "Tata Surya & Luar Angkasa",
+    "soal": "Planet yang terkenal memiliki cincin es dan debu paling indah adalah...",
+    "opsi": {
+      "A": "Mars",
+      "B": "Saturnus",
+      "C": "Bumi",
+      "D": "Venus"
+    },
+    "jawaban": "B",
+    "pembahasan": "Saturnus terkenal memiliki sistem cincin paling megah yang terdiri dari partikel es dan batuan.",
+    "aliases": [
+      "saturnus",
+      "b"
+    ]
+  },
+  {
+    "id": "surya_005",
+    "ronde": 3,
+    "kategori": "Tata Surya & Luar Angkasa",
+    "soal": "Satu-satunya satelit alami yang mengelilingi planet Bumi adalah...",
+    "opsi": {
+      "A": "Bulan",
+      "B": "Titan",
+      "C": "Ganymede",
+      "D": "Phobos"
+    },
+    "jawaban": "A",
+    "pembahasan": "Bulan adalah satu-satunya satelit alami Bumi yang menyebabkan terjadinya pasang surut air laut.",
+    "aliases": [
+      "bulan",
+      "moon",
+      "a"
+    ]
+  },
+  {
+    "id": "surya_006",
+    "ronde": 3,
+    "kategori": "Tata Surya & Luar Angkasa",
+    "soal": "Perputaran bumi pada porosnya sendiri disebut...",
+    "opsi": {
+      "A": "Revolusi",
+      "B": "Rotasi",
+      "C": "Evolusi",
+      "D": "Presesi"
+    },
+    "jawaban": "B",
+    "pembahasan": "Rotasi bumi berlangsung sekitar 24 jam dan mengakibatkan pergantian siang dan malam.",
+    "aliases": [
+      "rotasi",
+      "b"
+    ]
+  },
+  {
+    "id": "surya_007",
+    "ronde": 3,
+    "kategori": "Tata Surya & Luar Angkasa",
+    "soal": "Perputaran bumi mengelilingi matahari disebut...",
+    "opsi": {
+      "A": "Revolusi",
+      "B": "Rotasi",
+      "C": "Gravitasi",
+      "D": "Orbitasi"
+    },
+    "jawaban": "A",
+    "pembahasan": "Revolusi bumi memerlukan waktu 365,25 hari (1 tahun) dan menyebabkan pergantian musim.",
+    "aliases": [
+      "revolusi",
+      "a"
+    ]
+  },
+  {
+    "id": "surya_008",
+    "ronde": 3,
+    "kategori": "Tata Surya & Luar Angkasa",
+    "soal": "Planet yang letaknya paling dekat dengan matahari adalah...",
+    "opsi": {
+      "A": "Merkurius",
+      "B": "Venus",
+      "C": "Bumi",
+      "D": "Mars"
+    },
+    "jawaban": "A",
+    "pembahasan": "Merkurius adalah planet terkecil sekaligus terdekat posisinya dengan matahari.",
+    "aliases": [
+      "merkurius",
+      "mercury",
+      "a"
+    ]
+  },
+  {
+    "id": "surya_009",
+    "ronde": 3,
+    "kategori": "Tata Surya & Luar Angkasa",
+    "soal": "Kumpulan milyaran bintang yang menjadi tempat tata surya kita berada bernama...",
+    "opsi": {
+      "A": "Galaksi Bima Sakti",
+      "B": "Galaksi Andromeda",
+      "C": "Nebula Orion",
+      "D": "Black Hole"
+    },
+    "jawaban": "A",
+    "pembahasan": "Bima Sakti (Milky Way) adalah galaksi spiral tempat tata surya kita berada.",
+    "aliases": [
+      "bima sakti",
+      "milky way",
+      "a"
+    ]
+  },
+  {
+    "id": "surya_010",
+    "ronde": 3,
+    "kategori": "Tata Surya & Luar Angkasa",
+    "soal": "Benda langit berbatu yang terbakar dan menyala saat memasuki atmosfer bumi disebut...",
+    "opsi": {
+      "A": "Komet",
+      "B": "Meteor",
+      "C": "Asteroid",
+      "D": "Satelit"
+    },
+    "jawaban": "B",
+    "pembahasan": "Meteor (bintang jatuh) adalah meteoroid yang terbakar saat bergesekan dengan atmosfer bumi.",
+    "aliases": [
+      "meteor",
+      "b"
+    ]
+  },
+  {
+    "id": "mtk_001",
+    "ronde": 4,
+    "kategori": "Matematika Refleks SD",
+    "soal": "Berapakah hasil dari 7 x 8?",
+    "opsi": {
+      "A": "54",
+      "B": "56",
+      "C": "58",
+      "D": "64"
+    },
+    "jawaban": "B",
+    "pembahasan": "7 x 8 = 56. Rumus perkalian dasar sekolah dasar.",
+    "aliases": [
+      "56",
+      "b"
+    ]
+  },
+  {
+    "id": "mtk_002",
+    "ronde": 4,
+    "kategori": "Matematika Refleks SD",
+    "soal": "Berapakah hasil dari 12 x 5 + 15?",
+    "opsi": {
+      "A": "65",
+      "B": "75",
+      "C": "85",
+      "D": "70"
+    },
+    "jawaban": "B",
+    "pembahasan": "12 x 5 = 60, lalu 60 + 15 = 75.",
+    "aliases": [
+      "75",
+      "b"
+    ]
+  },
+  {
+    "id": "mtk_003",
+    "ronde": 4,
+    "kategori": "Matematika Refleks SD",
+    "soal": "Akar pangkat dua dari 144 (√144) adalah...",
+    "opsi": {
+      "A": "11",
+      "B": "12",
+      "C": "14",
+      "D": "16"
+    },
+    "jawaban": "B",
+    "pembahasan": "12 x 12 = 144, jadi √144 = 12.",
+    "aliases": [
+      "12",
+      "b"
+    ]
+  },
+  {
+    "id": "mtk_004",
+    "ronde": 4,
+    "kategori": "Matematika Refleks SD",
+    "soal": "1 jam ada berapa menit?",
+    "opsi": {
+      "A": "30 menit",
+      "B": "60 menit",
+      "C": "100 menit",
+      "D": "360 menit"
+    },
+    "jawaban": "B",
+    "pembahasan": "1 jam = 60 menit = 3.600 detik.",
+    "aliases": [
+      "60 menit",
+      "60",
+      "b"
+    ]
+  },
+  {
+    "id": "mtk_005",
+    "ronde": 4,
+    "kategori": "Matematika Refleks SD",
+    "soal": "Panjang 5 meter sama dengan berapa sentimeter (cm)?",
+    "opsi": {
+      "A": "50 cm",
+      "B": "500 cm",
+      "C": "5.000 cm",
+      "D": "0,5 cm"
+    },
+    "jawaban": "B",
+    "pembahasan": "1 meter = 100 cm. Jadi 5 meter = 5 x 100 = 500 cm.",
+    "aliases": [
+      "500 cm",
+      "500",
+      "b"
+    ]
+  },
+  {
+    "id": "mtk_006",
+    "ronde": 4,
+    "kategori": "Matematika Refleks SD",
+    "soal": "Sebuah persegi memiliki sisi 6 cm. Berapakah luasnya?",
+    "opsi": {
+      "A": "24 cm²",
+      "B": "36 cm²",
+      "C": "12 cm²",
+      "D": "30 cm²"
+    },
+    "jawaban": "B",
+    "pembahasan": "Luas persegi = sisi x sisi = 6 x 6 = 36 cm².",
+    "aliases": [
+      "36",
+      "36 cm",
+      "b"
+    ]
+  },
+  {
+    "id": "mtk_007",
+    "ronde": 4,
+    "kategori": "Matematika Refleks SD",
+    "soal": "1/2 ditambah 1/4 menghasilkan...",
+    "opsi": {
+      "A": "2/6",
+      "B": "3/4",
+      "C": "2/4",
+      "D": "1/8"
+    },
+    "jawaban": "B",
+    "pembahasan": "1/2 = 2/4. Maka 2/4 + 1/4 = 3/4.",
+    "aliases": [
+      "3/4",
+      "b"
+    ]
+  },
+  {
+    "id": "mtk_008",
+    "ronde": 4,
+    "kategori": "Matematika Refleks SD",
+    "soal": "Berapakah hasil dari 100 - 37?",
+    "opsi": {
+      "A": "53",
+      "B": "63",
+      "C": "73",
+      "D": "67"
+    },
+    "jawaban": "B",
+    "pembahasan": "100 - 37 = 63.",
+    "aliases": [
+      "63",
+      "b"
+    ]
+  },
+  {
+    "id": "mtk_009",
+    "ronde": 4,
+    "kategori": "Matematika Refleks SD",
+    "soal": "Jumlah sudut dalam sebuah segitiga selalu sama dengan...",
+    "opsi": {
+      "A": "90 derajat",
+      "B": "180 derajat",
+      "C": "360 derajat",
+      "D": "270 derajat"
+    },
+    "jawaban": "B",
+    "pembahasan": "Total ketiga sudut segitiga selalu 180°.",
+    "aliases": [
+      "180 derajat",
+      "180",
+      "b"
+    ]
+  },
+  {
+    "id": "mtk_010",
+    "ronde": 4,
+    "kategori": "Matematika Refleks SD",
+    "soal": "Bilangan prima terkecil yang juga bilangan genap adalah...",
+    "opsi": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "jawaban": "B",
+    "pembahasan": "2 adalah satu-satunya bilangan genap yang termasuk bilangan prima.",
+    "aliases": [
+      "2",
+      "b"
+    ]
+  },
+  {
+    "id": "receh_001",
+    "ronde": 5,
+    "kategori": "Teka-Teki Receh SD",
+    "soal": "Pocong apa yang paling disenangi oleh para petani di sawah?",
+    "opsi": {
+      "A": "Pocong serem",
+      "B": "Pocong-an harga",
+      "C": "Pocong melompat",
+      "D": "Pocong malam jumat"
+    },
+    "jawaban": "B",
+    "pembahasan": "Pocongan harga alias potongan harga/diskon pupuk dan bibit!",
+    "aliases": [
+      "pocongan harga",
+      "potongan harga",
+      "b"
+    ]
+  },
+  {
+    "id": "receh_002",
+    "ronde": 5,
+    "kategori": "Teka-Teki Receh SD",
+    "soal": "Ban apa yang rasanya manis, empuk, dan enak dimakan?",
+    "opsi": {
+      "A": "Ban serep",
+      "B": "Ban-drek",
+      "C": "Ban-gunan",
+      "D": "Ban kempes"
+    },
+    "jawaban": "B",
+    "pembahasan": "Bandrek manis hangat atau kue ban!",
+    "aliases": [
+      "bandrek",
+      "ban-drek",
+      "b"
+    ]
+  },
+  {
+    "id": "receh_003",
+    "ronde": 5,
+    "kategori": "Teka-Teki Receh SD",
+    "soal": "Gajah terbang dengan apa hayo?",
+    "opsi": {
+      "A": "Sayap raksasa",
+      "B": "Susah payah",
+      "C": "Helikopter",
+      "D": "Roket luar angkasa"
+    },
+    "jawaban": "B",
+    "pembahasan": "Gajah terbang dengan susah payah karena gajah nggak punya sayap haha!",
+    "aliases": [
+      "susah payah",
+      "b"
+    ]
+  },
+  {
+    "id": "receh_004",
+    "ronde": 5,
+    "kategori": "Teka-Teki Receh SD",
+    "soal": "Ikan apa yang matanya banyak banget?",
+    "opsi": {
+      "A": "Ikan hiu",
+      "B": "Ikan teri 1 kilogram",
+      "C": "Ikan paus",
+      "D": "Ikan lele"
+    },
+    "jawaban": "B",
+    "pembahasan": "Ikan teri 1 kg, ikannya ribuan matanya jadi ribuan juga!",
+    "aliases": [
+      "ikan teri",
+      "teri 1 kg",
+      "teri",
+      "b"
+    ]
+  },
+  {
+    "id": "receh_005",
+    "ronde": 5,
+    "kategori": "Teka-Teki Receh SD",
+    "soal": "Hewan apa yang bersaudara dan mirip keluarga?",
+    "opsi": {
+      "A": "Kucing belang",
+      "B": "Katak beradik",
+      "C": "Kera sakti",
+      "D": "Burung dara"
+    },
+    "jawaban": "B",
+    "pembahasan": "Katak beradik (plesetan dari kakak beradik)!",
+    "aliases": [
+      "katak beradik",
+      "b"
+    ]
+  },
+  {
+    "id": "receh_006",
+    "ronde": 5,
+    "kategori": "Teka-Teki Receh SD",
+    "soal": "Kunci apa yang bisa bikin orang joget gembira?",
+    "opsi": {
+      "A": "Kunci rumah",
+      "B": "Kunci gembok",
+      "C": "Kunci-pta lagu dangdut",
+      "D": "Kunci motor"
+    },
+    "jawaban": "C",
+    "pembahasan": "Kunci-pta lagu yang asik bikin semua orang goyang!",
+    "aliases": [
+      "kunci-pta lagu dangdut",
+      "kuncipta lagu",
+      "c"
+    ]
+  },
+  {
+    "id": "receh_007",
+    "ronde": 5,
+    "kategori": "Teka-Teki Receh SD",
+    "soal": "Daun apa yang nggak pernah gugur dan selalu nempel di badan?",
+    "opsi": {
+      "A": "Daun pisang",
+      "B": "Daun telinga",
+      "C": "Daun salam",
+      "D": "Daun sirih"
+    },
+    "jawaban": "B",
+    "pembahasan": "Daun telinga nempel terus di kepala kita seumur hidup!",
+    "aliases": [
+      "daun telinga",
+      "telinga",
+      "b"
+    ]
+  },
+  {
+    "id": "receh_008",
+    "ronde": 5,
+    "kategori": "Teka-Teki Receh SD",
+    "soal": "Benda apa yang kalau diisi malah makin ringan?",
+    "opsi": {
+      "A": "Bak mandi",
+      "B": "Balon gas",
+      "C": "Karung beras",
+      "D": "Ban mobil"
+    },
+    "jawaban": "B",
+    "pembahasan": "Balon gas kalau diisi gas helium malah melayang ke atas!",
+    "aliases": [
+      "balon gas",
+      "balon",
+      "b"
+    ]
+  },
+  {
+    "id": "receh_009",
+    "ronde": 5,
+    "kategori": "Teka-Teki Receh SD",
+    "soal": "Bebek apa yang kalau jalan mutar ke kiri terus?",
+    "opsi": {
+      "A": "Bebek angsa",
+      "B": "Bebek dikunci stang",
+      "C": "Bebek lumpuh",
+      "D": "Bebek mall"
+    },
+    "jawaban": "B",
+    "pembahasan": "Bebek dikunci stang mutar ke kiri terus kayak motor!",
+    "aliases": [
+      "bebek dikunci stang",
+      "kunci stang",
+      "b"
+    ]
+  },
+  {
+    "id": "receh_010",
+    "ronde": 5,
+    "kategori": "Teka-Teki Receh SD",
+    "soal": "Mata apa yang ukurannya paling besar di dunia?",
+    "opsi": {
+      "A": "Mata elang",
+      "B": "Matahari",
+      "C": "Mata sapi",
+      "D": "Mata air"
+    },
+    "jawaban": "B",
+    "pembahasan": "Matahari dong, diameternya 1,3 juta kilometer!",
+    "aliases": [
+      "matahari",
+      "b"
+    ]
+  },
+  {
+    "id": "tubuh_001",
+    "ronde": 6,
+    "kategori": "Tubuh Manusia & Kesehatan",
+    "soal": "Organ tubuh yang berfungsi memompa darah ke seluruh tubuh adalah...",
+    "opsi": {
+      "A": "Paru-paru",
+      "B": "Jantung",
+      "C": "Ginjal",
+      "D": "Lambung"
+    },
+    "jawaban": "B",
+    "pembahasan": "Jantung berdetak sekitar 60-100 kali per menit untuk memompa darah beroksigen ke seluruh sel tubuh.",
+    "aliases": [
+      "jantung",
+      "heart",
+      "b"
+    ]
+  },
+  {
+    "id": "tubuh_002",
+    "ronde": 6,
+    "kategori": "Tubuh Manusia & Kesehatan",
+    "soal": "Organ utama pernapasan manusia tempat bertukarnya oksigen dan karbondioksida adalah...",
+    "opsi": {
+      "A": "Jantung",
+      "B": "Paru-paru",
+      "C": "Hati",
+      "D": "Trakea"
+    },
+    "jawaban": "B",
+    "pembahasan": "Pertukaran gas oksigen (O2) dan karbondioksida (CO2) terjadi di alveolus di dalam paru-paru.",
+    "aliases": [
+      "paru-paru",
+      "paru paru",
+      "paru",
+      "b"
+    ]
+  },
+  {
+    "id": "tubuh_003",
+    "ronde": 6,
+    "kategori": "Tubuh Manusia & Kesehatan",
+    "soal": "Panca indera yang berfungsi sebagai indera pengecap rasa adalah...",
+    "opsi": {
+      "A": "Hidung",
+      "B": "Lidah",
+      "C": "Kulit",
+      "D": "Telinga"
+    },
+    "jawaban": "B",
+    "pembahasan": "Lidah memiliki papila pengecap rasa manis, asin, asam, pahit, dan umami.",
+    "aliases": [
+      "lidah",
+      "tongue",
+      "b"
+    ]
+  },
+  {
+    "id": "tubuh_004",
+    "ronde": 6,
+    "kategori": "Tubuh Manusia & Kesehatan",
+    "soal": "Vitamin yang paling banyak terkandung dalam wortel dan baik untuk kesehatan mata adalah...",
+    "opsi": {
+      "A": "Vitamin A",
+      "B": "Vitamin B",
+      "C": "Vitamin C",
+      "D": "Vitamin D"
+    },
+    "jawaban": "A",
+    "pembahasan": "Vitamin A (beta-karoten) esensial untuk kesehatan retina mata dan mencegah rabun senja.",
+    "aliases": [
+      "vitamin a",
+      "a"
+    ]
+  },
+  {
+    "id": "tubuh_005",
+    "ronde": 6,
+    "kategori": "Tubuh Manusia & Kesehatan",
+    "soal": "Organ tubuh yang menyaring racun dari darah dan menghasilkan urin adalah...",
+    "opsi": {
+      "A": "Empedu",
+      "B": "Ginjal",
+      "C": "Limpa",
+      "D": "Pankreas"
+    },
+    "jawaban": "B",
+    "pembahasan": "Sepasang ginjal manusia menyaring sekitar 200 liter darah per hari untuk membuang sisa metabolisme menjadi urin.",
+    "aliases": [
+      "ginjal",
+      "kidney",
+      "b"
+    ]
+  },
+  {
+    "id": "tubuh_006",
+    "ronde": 6,
+    "kategori": "Tubuh Manusia & Kesehatan",
+    "soal": "Zat besi sangat dibutuhkan tubuh untuk membentuk sel darah merah yang disebut...",
+    "opsi": {
+      "A": "Leukosit",
+      "B": "Hemoglobin",
+      "C": "Trombosit",
+      "D": "Plasma"
+    },
+    "jawaban": "B",
+    "pembahasan": "Hemoglobin (Hb) dalam eritrosit mengikat oksigen untuk dibawa ke seluruh jaringan tubuh.",
+    "aliases": [
+      "hemoglobin",
+      "b"
+    ]
+  },
+  {
+    "id": "tubuh_007",
+    "ronde": 6,
+    "kategori": "Tubuh Manusia & Kesehatan",
+    "soal": "Bagian mata yang berwarna dan mengatur banyak sedikitnya cahaya yang masuk adalah...",
+    "opsi": {
+      "A": "Retina",
+      "B": "Iris",
+      "C": "Kornea",
+      "D": "Lensa"
+    },
+    "jawaban": "B",
+    "pembahasan": "Iris memberi warna pada mata dan mengatur diameter pupil.",
+    "aliases": [
+      "iris",
+      "b"
+    ]
+  },
+  {
+    "id": "tubuh_008",
+    "ronde": 6,
+    "kategori": "Tubuh Manusia & Kesehatan",
+    "soal": "Kalsium dan vitamin D sangat penting untuk menjaga kesehatan dan kepadatan...",
+    "opsi": {
+      "A": "Rambut",
+      "B": "Tulang dan gigi",
+      "C": "Kulit",
+      "D": "Kuku"
+    },
+    "jawaban": "B",
+    "pembahasan": "Kalsium dan vitamin D memperkuat struktur matriks tulang dan gigi serta mencegah osteoporosis.",
+    "aliases": [
+      "tulang dan gigi",
+      "tulang",
+      "gigi",
+      "b"
+    ]
+  },
+  {
+    "id": "tubuh_009",
+    "ronde": 6,
+    "kategori": "Tubuh Manusia & Kesehatan",
+    "soal": "Enzim ptialin yang menguraikan karbohidrat terdapat di dalam...",
+    "opsi": {
+      "A": "Lambung",
+      "B": "Air liur (Mulut)",
+      "C": "Usus halus",
+      "D": "Empedu"
+    },
+    "jawaban": "B",
+    "pembahasan": "Enzim amilase/ptialin dalam air liur mengubah karbohidrat kompleks menjadi glukosa sederhana saat mengunyah.",
+    "aliases": [
+      "air liur",
+      "mulut",
+      "b"
+    ]
+  },
+  {
+    "id": "tubuh_010",
+    "ronde": 6,
+    "kategori": "Tubuh Manusia & Kesehatan",
+    "soal": "Penyakit demam berdarah (DBD) ditularkan melalui gigitan nyamuk...",
+    "opsi": {
+      "A": "Anopheles",
+      "B": "Aedes aegypti",
+      "C": "Culex",
+      "D": "Mansonia"
+    },
+    "jawaban": "B",
+    "pembahasan": "Nyamuk Aedes aegypti belang hitam-putih membawa virus dengue penyebab DBD.",
+    "aliases": [
+      "aedes aegypti",
+      "aedes",
+      "b"
+    ]
+  },
+  {
+    "id": "bhs_001",
+    "ronde": 7,
+    "kategori": "Bahasa Indonesia & Peribahasa",
+    "soal": "Lanjutan peribahasa 'Ada gula ada...' adalah...",
+    "opsi": {
+      "A": "Kopi",
+      "B": "Semut",
+      "C": "Teh",
+      "D": "Tawon"
+    },
+    "jawaban": "B",
+    "pembahasan": "'Ada gula ada semut' artinya di mana ada banyak rezeki atau kesenangan, di situlah banyak orang berkumpul.",
+    "aliases": [
+      "semut",
+      "b"
+    ]
+  },
+  {
+    "id": "bhs_002",
+    "ronde": 7,
+    "kategori": "Bahasa Indonesia & Peribahasa",
+    "soal": "Lanjutan peribahasa 'Besar pasak daripada...' adalah...",
+    "opsi": {
+      "A": "Paku",
+      "B": "Tiang",
+      "C": "Rumah",
+      "D": "Pohon"
+    },
+    "jawaban": "B",
+    "pembahasan": "'Besar pasak daripada tiang' artinya pengeluaran lebih besar daripada pemasukan pendapatan.",
+    "aliases": [
+      "tiang",
+      "b"
+    ]
+  },
+  {
+    "id": "bhs_003",
+    "ronde": 7,
+    "kategori": "Bahasa Indonesia & Peribahasa",
+    "soal": "Sinonim (persamaan kata) dari kata 'Pandai' adalah...",
+    "opsi": {
+      "A": "Rajin",
+      "B": "Pintar",
+      "C": "Cermat",
+      "D": "Bijak"
+    },
+    "jawaban": "B",
+    "pembahasan": "Sinonim pandai adalah pintar, cerdas, atau cakap.",
+    "aliases": [
+      "pintar",
+      "b"
+    ]
+  },
+  {
+    "id": "bhs_004",
+    "ronde": 7,
+    "kategori": "Bahasa Indonesia & Peribahasa",
+    "soal": "Antonim (lawan kata) dari kata 'Rajin' adalah...",
+    "opsi": {
+      "A": "Lambat",
+      "B": "Malas",
+      "C": "Bodoh",
+      "D": "Lelah"
+    },
+    "jawaban": "B",
+    "pembahasan": "Lawan kata rajin adalah malas.",
+    "aliases": [
+      "malas",
+      "b"
+    ]
+  },
+  {
+    "id": "bhs_005",
+    "ronde": 7,
+    "kategori": "Bahasa Indonesia & Peribahasa",
+    "soal": "Ungkapan 'Kutu buku' memiliki arti orang yang...",
+    "opsi": {
+      "A": "Suka mengarang",
+      "B": "Sangat suka membaca buku",
+      "C": "Menjual buku",
+      "D": "Menyimpan buku"
+    },
+    "jawaban": "B",
+    "pembahasan": "Kutu buku adalah kiasan bagi seseorang yang gemar sekali membaca dan menuntut ilmu.",
+    "aliases": [
+      "sangat suka membaca buku",
+      "suka membaca",
+      "b"
+    ]
+  },
+  {
+    "id": "bhs_006",
+    "ronde": 7,
+    "kategori": "Bahasa Indonesia & Peribahasa",
+    "soal": "Lanjutan peribahasa 'Tong kosong nyaring...' adalah...",
+    "opsi": {
+      "A": "Suaranya",
+      "B": "Bunyinya",
+      "C": "Gendangnya",
+      "D": "Ketukannya"
+    },
+    "jawaban": "B",
+    "pembahasan": "'Tong kosong nyaring bunyinya' artinya orang yang sombong banyak omong biasanya tidak berilmu.",
+    "aliases": [
+      "bunyinya",
+      "b"
+    ]
+  },
+  {
+    "id": "bhs_007",
+    "ronde": 7,
+    "kategori": "Bahasa Indonesia & Peribahasa",
+    "soal": "Tokoh hewan yang terkenal sangat cerdik dalam dongeng nusantara adalah...",
+    "opsi": {
+      "A": "Buaya",
+      "B": "Kancil",
+      "C": "Gajah",
+      "D": "Harimau"
+    },
+    "jawaban": "B",
+    "pembahasan": "Si Kancil adalah tokoh fabel nusantara legendaris yang cerdik dan suka menolong.",
+    "aliases": [
+      "kancil",
+      "si kancil",
+      "b"
+    ]
+  },
+  {
+    "id": "bhs_008",
+    "ronde": 7,
+    "kategori": "Bahasa Indonesia & Peribahasa",
+    "soal": "Penulisan kata baku yang benar menurut KBBI adalah...",
+    "opsi": {
+      "A": "Apotik",
+      "B": "Apotek",
+      "C": "Apotiek",
+      "D": "Afotek"
+    },
+    "jawaban": "B",
+    "pembahasan": "Bentuk baku menurut KBBI adalah 'Apotek' (tenaga ahlinya adalah apoteker).",
+    "aliases": [
+      "apotek",
+      "b"
+    ]
+  },
+  {
+    "id": "bhs_009",
+    "ronde": 7,
+    "kategori": "Bahasa Indonesia & Peribahasa",
+    "soal": "Lanjutan peribahasa 'Air tenang menghanyutkan, air beriak tanda...' adalah...",
+    "opsi": {
+      "A": "Dalam",
+      "B": "Tak dalam",
+      "C": "Deras",
+      "D": "Banjir"
+    },
+    "jawaban": "B",
+    "pembahasan": "'Air beriak tanda tak dalam' artinya orang yang banyak cakap biasanya tidak berilmu dalam.",
+    "aliases": [
+      "tak dalam",
+      "b"
+    ]
+  },
+  {
+    "id": "bhs_010",
+    "ronde": 7,
+    "kategori": "Bahasa Indonesia & Peribahasa",
+    "soal": "Ungkapan 'Ringan tangan' memiliki arti orang yang suka...",
+    "opsi": {
+      "A": "Mencuri",
+      "B": "Membantu orang lain",
+      "C": "Berolahraga",
+      "D": "Menari"
+    },
+    "jawaban": "B",
+    "pembahasan": "Ringan tangan artinya suka menolong orang lain dengan ikhlas.",
+    "aliases": [
+      "membantu orang lain",
+      "menolong",
+      "b"
+    ]
+  },
+  {
+    "id": "sej_001",
+    "ronde": 8,
+    "kategori": "Sejarah & Pahlawan Nasional",
+    "soal": "Teks Proklamasi Kemerdekaan Indonesia pada 17 Agustus 1945 dibacakan oleh...",
+    "opsi": {
+      "A": "Moh. Hatta",
+      "B": "Ir. Soekarno",
+      "C": "Sutan Sjahrir",
+      "D": "Ki Hajar Dewantara"
+    },
+    "jawaban": "B",
+    "pembahasan": "Ir. Soekarno didampingi Drs. Moh. Hatta membacakan teks Proklamasi di Jl. Pegangsaan Timur No. 56 Jakarta.",
+    "aliases": [
+      "ir soekarno",
+      "soekarno",
+      "bung karno",
+      "b"
+    ]
+  },
+  {
+    "id": "sej_002",
+    "ronde": 8,
+    "kategori": "Sejarah & Pahlawan Nasional",
+    "soal": "Pahlawan wanita pelopor emansipasi pendidikan wanita Indonesia adalah...",
+    "opsi": {
+      "A": "Cut Nyak Dien",
+      "B": "R.A. Kartini",
+      "C": "Dewi Sartika",
+      "D": "Martha Christina Tiahahu"
+    },
+    "jawaban": "B",
+    "pembahasan": "R.A. Kartini memperjuangkan hak belajar perempuan Indonesia lewat kumpulan surat 'Habis Gelap Terbitlah Terang'.",
+    "aliases": [
+      "ra kartini",
+      "kartini",
+      "b"
+    ]
+  },
+  {
+    "id": "sej_003",
+    "ronde": 8,
+    "kategori": "Sejarah & Pahlawan Nasional",
+    "soal": "Bendera Pusaka Merah Putih pertama kali dijahit oleh tangan...",
+    "opsi": {
+      "A": "Ibu Fatmawati",
+      "B": "Ibu Kartini",
+      "C": "Ibu Tien",
+      "D": "Sayuti Melik"
+    },
+    "jawaban": "A",
+    "pembahasan": "Ibu Fatmawati (istri Bung Karno) menjahit bendera Sang Saka Merah Putih yang dikibarkan saat proklamasi.",
+    "aliases": [
+      "ibu fatmawati",
+      "fatmawati",
+      "a"
+    ]
+  },
+  {
+    "id": "sej_004",
+    "ronde": 8,
+    "kategori": "Sejarah & Pahlawan Nasional",
+    "soal": "Bapak Pendidikan Nasional Indonesia adalah pendiri Taman Siswa, yaitu...",
+    "opsi": {
+      "A": "Bung Hatta",
+      "B": "Ki Hajar Dewantara",
+      "C": "HOS Cokroaminoto",
+      "D": "KH Ahmad Dahlan"
+    },
+    "jawaban": "B",
+    "pembahasan": "Ki Hajar Dewantara (Raden Mas Soewardi Soerjaningrat) mencetuskan semboyan 'Tut Wuri Handayani'.",
+    "aliases": [
+      "ki hajar dewantara",
+      "dewantara",
+      "b"
+    ]
+  },
+  {
+    "id": "sej_005",
+    "ronde": 8,
+    "kategori": "Sejarah & Pahlawan Nasional",
+    "soal": "Hari Pahlawan Nasional diperingati setiap tanggal...",
+    "opsi": {
+      "A": "17 Agustus",
+      "B": "10 November",
+      "C": "28 Oktober",
+      "D": "20 Mei"
+    },
+    "jawaban": "B",
+    "pembahasan": "10 November memperingati pertempuran heroik arek-arek Suroboyo yang dikomandoi Bung Tomo pada tahun 1945.",
+    "aliases": [
+      "10 november",
+      "b"
+    ]
+  },
+  {
+    "id": "sej_006",
+    "ronde": 8,
+    "kategori": "Sejarah & Pahlawan Nasional",
+    "soal": "Hari Sumpah Pemuda diperingati setiap tanggal...",
+    "opsi": {
+      "A": "17 Agustus",
+      "B": "28 Oktober",
+      "C": "10 November",
+      "D": "1 Juni"
+    },
+    "jawaban": "B",
+    "pembahasan": "Kongres Pemuda II pada 28 Oktober 1928 melahirkan ikrar Satu Nusa, Satu Bangsa, dan Satu Bahasa Indonesia.",
+    "aliases": [
+      "28 oktober",
+      "b"
+    ]
+  },
+  {
+    "id": "sej_007",
+    "ronde": 8,
+    "kategori": "Sejarah & Pahlawan Nasional",
+    "soal": "Pahlawan dari Maluku yang memimpin perlawanan melawan Belanda di Benteng Duurstede adalah...",
+    "opsi": {
+      "A": "Pangeran Diponegoro",
+      "B": "Kapitan Pattimura",
+      "C": "Sultan Hasanuddin",
+      "D": "Tuanku Imam Bonjol"
+    },
+    "jawaban": "B",
+    "pembahasan": "Kapitan Pattimura (Thomas Matulessy) adalah pahlawan nasional dari Maluku.",
+    "aliases": [
+      "kapitan pattimura",
+      "pattimura",
+      "b"
+    ]
+  },
+  {
+    "id": "sej_008",
+    "ronde": 8,
+    "kategori": "Sejarah & Pahlawan Nasional",
+    "soal": "Pahlawan wanita pemberani dari Tanah Rencong Aceh yang memimpin perang gerilya adalah...",
+    "opsi": {
+      "A": "R.A. Kartini",
+      "B": "Cut Nyak Dien",
+      "C": "Dewi Sartika",
+      "D": "Nyi Ageng Serang"
+    },
+    "jawaban": "B",
+    "pembahasan": "Cut Nyak Dien bersama suaminya Teuku Umar memimpin pasukan rakyat Aceh melawan Belanda.",
+    "aliases": [
+      "cut nyak dien",
+      "b"
+    ]
+  },
+  {
+    "id": "sej_009",
+    "ronde": 8,
+    "kategori": "Sejarah & Pahlawan Nasional",
+    "soal": "Pahlawan dari Sulawesi Selatan yang dijuluki 'Ayam Jantan dari Timur' adalah...",
+    "opsi": {
+      "A": "Pangeran Antasari",
+      "B": "Sultan Hasanuddin",
+      "C": "Aroeppala",
+      "D": "Frans Kaisiepo"
+    },
+    "jawaban": "B",
+    "pembahasan": "Sultan Hasanuddin adalah Raja Gowa ke-16 yang dijuluki De Haantjes van Het Oosten (Ayam Jantan dari Timur).",
+    "aliases": [
+      "sultan hasanuddin",
+      "hasanuddin",
+      "b"
+    ]
+  },
+  {
+    "id": "sej_010",
+    "ronde": 8,
+    "kategori": "Sejarah & Pahlawan Nasional",
+    "soal": "Naskah Proklamasi Kemerdekaan Indonesia diketik oleh...",
+    "opsi": {
+      "A": "Sukarni",
+      "B": "Sayuti Melik",
+      "C": "Chaerul Saleh",
+      "D": "BM Diah"
+    },
+    "jawaban": "B",
+    "pembahasan": "Sayuti Melik mengetik teks proklamasi yang telah dirumuskan di rumah Laksamana Maeda.",
+    "aliases": [
+      "sayuti melik",
+      "sayuti",
+      "b"
+    ]
+  },
+  {
+    "id": "bud_001",
+    "ronde": 9,
+    "kategori": "Budaya & Rumah Adat Nusantara",
+    "soal": "Rumah adat khas Minangkabau yang atapnya melengkung runcing seperti tanduk kerbau bernama...",
+    "opsi": {
+      "A": "Rumah Tongkonan",
+      "B": "Rumah Gadang",
+      "C": "Rumah Joglo",
+      "D": "Rumah Honai"
+    },
+    "jawaban": "B",
+    "pembahasan": "Rumah Gadang adalah rumah adat suku Minangkabau di Sumatera Barat dengan gonjong atap runcing.",
+    "aliases": [
+      "rumah gadang",
+      "gadang",
+      "b"
+    ]
+  },
+  {
+    "id": "bud_002",
+    "ronde": 9,
+    "kategori": "Budaya & Rumah Adat Nusantara",
+    "soal": "Alat musik tradisional Jawa Barat yang terbuat dari bambu dan dimainkan dengan digoyangkan adalah...",
+    "opsi": {
+      "A": "Gamelan",
+      "B": "Angklung",
+      "C": "Kolintang",
+      "D": "Sasando"
+    },
+    "jawaban": "B",
+    "pembahasan": "Angklung adalah alat musik multitonal bambu khas Sunda Jawa Barat yang diakui UNESCO.",
+    "aliases": [
+      "angklung",
+      "b"
+    ]
+  },
+  {
+    "id": "bud_003",
+    "ronde": 9,
+    "kategori": "Budaya & Rumah Adat Nusantara",
+    "soal": "Alat musik petik khas Pulau Rote Nusa Tenggara Timur yang menggunakan daun lontar adalah...",
+    "opsi": {
+      "A": "Kecapi",
+      "B": "Sasando",
+      "C": "Sape",
+      "D": "Gambus"
+    },
+    "jawaban": "B",
+    "pembahasan": "Sasando adalah alat musik dawai petik tradisional Rote NTT dengan resonansi daun lontar.",
+    "aliases": [
+      "sasando",
+      "b"
+    ]
+  },
+  {
+    "id": "bud_004",
+    "ronde": 9,
+    "kategori": "Budaya & Rumah Adat Nusantara",
+    "soal": "Tari Piring yang penarinya membawa dua piring tanpa jatuh berasal dari provinsi...",
+    "opsi": {
+      "A": "Sumatera Selatan",
+      "B": "Sumatera Barat",
+      "C": "Jambi",
+      "D": "Bengkulu"
+    },
+    "jawaban": "B",
+    "pembahasan": "Tari Piring adalah tarian tradisional Minangkabau dari Sumatera Barat.",
+    "aliases": [
+      "sumatera barat",
+      "sumbar",
+      "b"
+    ]
+  },
+  {
+    "id": "bud_005",
+    "ronde": 9,
+    "kategori": "Budaya & Rumah Adat Nusantara",
+    "soal": "Rumah adat Honai yang berbentuk bulat dan beratap jerami adalah rumah suku di...",
+    "opsi": {
+      "A": "Maluku",
+      "B": "Papua",
+      "C": "Kalimantan",
+      "D": "Sulawesi"
+    },
+    "jawaban": "B",
+    "pembahasan": "Rumah Honai adalah rumah tradisional suku Dani di lembah Baliem Papua.",
+    "aliases": [
+      "papua",
+      "b"
+    ]
+  },
+  {
+    "id": "bud_006",
+    "ronde": 9,
+    "kategori": "Budaya & Rumah Adat Nusantara",
+    "soal": "Lagu daerah 'Ampar-Ampar Pisang' berasal dari provinsi...",
+    "opsi": {
+      "A": "Kalimantan Selatan",
+      "B": "Kalimantan Barat",
+      "C": "Sumatera Utara",
+      "D": "Sulawesi Utara"
+    },
+    "jawaban": "A",
+    "pembahasan": "Ampar-ampar pisang adalah lagu anak-anak tradisional dari Kalimantan Selatan.",
+    "aliases": [
+      "kalimantan selatan",
+      "kalsel",
+      "a"
+    ]
+  },
+  {
+    "id": "bud_007",
+    "ronde": 9,
+    "kategori": "Budaya & Rumah Adat Nusantara",
+    "soal": "Kain batik tradisional Indonesia telah diakui sebagai warisan budaya dunia oleh...",
+    "opsi": {
+      "A": "WHO",
+      "B": "UNESCO",
+      "C": "UNICEF",
+      "D": "FIFA"
+    },
+    "jawaban": "B",
+    "pembahasan": "Batik Indonesia resmi diakui UNESCO sebagai Warisan Kemanusiaan untuk Budaya Lisan dan Nonbendawi pada 2 Oktober 2009.",
+    "aliases": [
+      "unesco",
+      "b"
+    ]
+  },
+  {
+    "id": "bud_008",
+    "ronde": 9,
+    "kategori": "Budaya & Rumah Adat Nusantara",
+    "soal": "Tari Saman yang dilakukan dengan gerakan tangan cepat dan serempak berasal dari daerah...",
+    "opsi": {
+      "A": "Aceh (Gayo)",
+      "B": "Sumatera Barat",
+      "C": "Riau",
+      "D": "Sumatera Utara"
+    },
+    "jawaban": "A",
+    "pembahasan": "Tari Saman berasal dari suku Gayo di Aceh, terkenal dengan tarian seribu tangan.",
+    "aliases": [
+      "aceh",
+      "gayo",
+      "a"
+    ]
+  },
+  {
+    "id": "bud_009",
+    "ronde": 9,
+    "kategori": "Budaya & Rumah Adat Nusantara",
+    "soal": "Rumah Tongkonan yang megah dengan atap melengkung menyerupai perahu berasal dari suku...",
+    "opsi": {
+      "A": "Bugis",
+      "B": "Toraja",
+      "C": "Dayak",
+      "D": "Asmat"
+    },
+    "jawaban": "B",
+    "pembahasan": "Tongkonan adalah rumah adat masyarakat Toraja di Sulawesi Selatan.",
+    "aliases": [
+      "toraja",
+      "b"
+    ]
+  },
+  {
+    "id": "bud_010",
+    "ronde": 9,
+    "kategori": "Budaya & Rumah Adat Nusantara",
+    "soal": "Senjata tradisional khas suku Sunda Jawa Barat berbentuk melengkung disebut...",
+    "opsi": {
+      "A": "Keris",
+      "B": "Kujang",
+      "C": "Mandau",
+      "D": "Rencong"
+    },
+    "jawaban": "B",
+    "pembahasan": "Kujang adalah senjata tradisional khas masyarakat Sunda Jawa Barat.",
+    "aliases": [
+      "kujang",
+      "b"
+    ]
+  },
+  {
+    "id": "ppkn_001",
+    "ronde": 10,
+    "kategori": "PPKn & Garuda Pancasila",
+    "soal": "Lambang sila ke-1 Pancasila (Ketuhanan yang Maha Esa) adalah...",
+    "opsi": {
+      "A": "Rantai",
+      "B": "Bintang",
+      "C": "Pohon Beringin",
+      "D": "Kepala Banteng"
+    },
+    "jawaban": "B",
+    "pembahasan": "Bintang emas bersudut lima adalah lambang sila ke-1 Pancasila.",
+    "aliases": [
+      "bintang",
+      "b"
+    ]
+  },
+  {
+    "id": "ppkn_002",
+    "ronde": 10,
+    "kategori": "PPKn & Garuda Pancasila",
+    "soal": "Lambang sila ke-2 Pancasila (Kemanusiaan yang Adil dan Beradab) adalah...",
+    "opsi": {
+      "A": "Rantai emas",
+      "B": "Bintang",
+      "C": "Pohon Beringin",
+      "D": "Padi dan Kapas"
+    },
+    "jawaban": "A",
+    "pembahasan": "Mata rantai bulat dan persegi saling mengait melambangkan sila ke-2 Pancasila.",
+    "aliases": [
+      "rantai",
+      "rantai emas",
+      "a"
+    ]
+  },
+  {
+    "id": "ppkn_003",
+    "ronde": 10,
+    "kategori": "PPKn & Garuda Pancasila",
+    "soal": "Lambang sila ke-3 Pancasila (Persatuan Indonesia) adalah...",
+    "opsi": {
+      "A": "Bintang",
+      "B": "Pohon Beringin",
+      "C": "Kepala Banteng",
+      "D": "Padi dan Kapas"
+    },
+    "jawaban": "B",
+    "pembahasan": "Pohon Beringin yang rindang melambangkan tempat berteduh seluruh bangsa Indonesia (Sila ke-3).",
+    "aliases": [
+      "pohon beringin",
+      "beringin",
+      "b"
+    ]
+  },
+  {
+    "id": "ppkn_004",
+    "ronde": 10,
+    "kategori": "PPKn & Garuda Pancasila",
+    "soal": "Lambang sila ke-4 Pancasila (Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan...) adalah...",
+    "opsi": {
+      "A": "Pohon Beringin",
+      "B": "Kepala Banteng",
+      "C": "Rantai",
+      "D": "Padi dan Kapas"
+    },
+    "jawaban": "B",
+    "pembahasan": "Kepala Banteng melambangkan musyawarah dan jiwa sosial gotong royong (Sila ke-4).",
+    "aliases": [
+      "kepala banteng",
+      "banteng",
+      "b"
+    ]
+  },
+  {
+    "id": "ppkn_005",
+    "ronde": 10,
+    "kategori": "PPKn & Garuda Pancasila",
+    "soal": "Lambang sila ke-5 Pancasila (Keadilan Sosial bagi Seluruh Rakyat Indonesia) adalah...",
+    "opsi": {
+      "A": "Bintang",
+      "B": "Padi dan Kapas",
+      "C": "Kepala Banteng",
+      "D": "Rantai"
+    },
+    "jawaban": "B",
+    "pembahasan": "Padi (pangan) dan Kapas (sandang) melambangkan kemakmuran dan keadilan sosial (Sila ke-5).",
+    "aliases": [
+      "padi dan kapas",
+      "padi kapas",
+      "b"
+    ]
+  },
+  {
+    "id": "ppkn_006",
+    "ronde": 10,
+    "kategori": "PPKn & Garuda Pancasila",
+    "soal": "Semboyan 'Bhinneka Tunggal Ika' yang dicengkeram Garuda memiliki arti...",
+    "opsi": {
+      "A": "Bersatu kita teguh",
+      "B": "Berbeda-beda tetapi tetap satu jua",
+      "C": "Maju tak gentar",
+      "D": "Adil dan makmur"
+    },
+    "jawaban": "B",
+    "pembahasan": "Bhinneka Tunggal Ika berasal dari Kitab Sutasoma karangan Mpu Tantular.",
+    "aliases": [
+      "berbeda beda tetapi tetap satu jua",
+      "berbeda-beda tetapi tetap satu jua",
+      "b"
+    ]
+  },
+  {
+    "id": "ppkn_007",
+    "ronde": 10,
+    "kategori": "PPKn & Garuda Pancasila",
+    "soal": "Jumlah bulu pada masing-masing sayap Burung Garuda melambangkan tanggal kemerdekaan, yaitu...",
+    "opsi": {
+      "A": "8 helai",
+      "B": "17 helai",
+      "C": "19 helai",
+      "D": "45 helai"
+    },
+    "jawaban": "B",
+    "pembahasan": "17 helai bulu sayap melambangkan tanggal kemerdekaan 17 Agustus 1945.",
+    "aliases": [
+      "17",
+      "17 helai",
+      "b"
+    ]
+  },
+  {
+    "id": "ppkn_008",
+    "ronde": 10,
+    "kategori": "PPKn & Garuda Pancasila",
+    "soal": "Jumlah bulu pada ekor Burung Garuda melambangkan bulan kemerdekaan, yaitu...",
+    "opsi": {
+      "A": "8 helai",
+      "B": "17 helai",
+      "C": "19 helai",
+      "D": "45 helai"
+    },
+    "jawaban": "A",
+    "pembahasan": "8 helai bulu ekor melambangkan bulan Agustus (bulan ke-8).",
+    "aliases": [
+      "8",
+      "8 helai",
+      "a"
+    ]
+  },
+  {
+    "id": "ppkn_009",
+    "ronde": 10,
+    "kategori": "PPKn & Garuda Pancasila",
+    "soal": "Lagu Kebangsaan Republik Indonesia adalah...",
+    "opsi": {
+      "A": "Garuda Pancasila",
+      "B": "Indonesia Raya",
+      "C": "Hari Merdeka",
+      "D": "Bagimu Negeri"
+    },
+    "jawaban": "B",
+    "pembahasan": "Indonesia Raya diciptakan oleh Wage Rudolf (W.R.) Soepratman.",
+    "aliases": [
+      "indonesia raya",
+      "b"
+    ]
+  },
+  {
+    "id": "ppkn_010",
+    "ronde": 10,
+    "kategori": "PPKn & Garuda Pancasila",
+    "soal": "Hari Lahir Pancasila diperingati setiap tanggal...",
+    "opsi": {
+      "A": "1 Juni",
+      "B": "17 Agustus",
+      "C": "1 Oktober",
+      "D": "10 November"
+    },
+    "jawaban": "A",
+    "pembahasan": "1 Juni memperingati pidato Bung Karno tahun 1945 tentang dasar negara di sidang BPUPKI.",
+    "aliases": [
+      "1 juni",
+      "a"
+    ]
+  },
+  {
+    "id": "umum_001",
+    "ronde": 11,
+    "kategori": "Benda di Sekitar & Sains Dasar",
+    "soal": "Alat yang digunakan untuk mengukur suhu tubuh saat demam adalah...",
+    "opsi": {
+      "A": "Barometer",
+      "B": "Termometer",
+      "C": "Speedometer",
+      "D": "Higrometer"
+    },
+    "jawaban": "B",
+    "pembahasan": "Termometer digunakan untuk mengukur derajat suhu tubuh atau ruangan.",
+    "aliases": [
+      "termometer",
+      "thermometer",
+      "b"
+    ]
+  },
+  {
+    "id": "umum_002",
+    "ronde": 11,
+    "kategori": "Benda di Sekitar & Sains Dasar",
+    "soal": "Kutub magnet yang senama (misal Utara dengan Utara) jika didekatkan akan...",
+    "opsi": {
+      "A": "Tarik-menarik",
+      "B": "Tolak-menolak",
+      "C": "Menempel kuat",
+      "D": "Meleleh"
+    },
+    "jawaban": "B",
+    "pembahasan": "Kutub magnet sejenis tolak-menolak, sedangkan kutub berlainan tarik-menarik.",
+    "aliases": [
+      "tolak menolak",
+      "tolak-menolak",
+      "b"
+    ]
+  },
+  {
+    "id": "umum_003",
+    "ronde": 11,
+    "kategori": "Benda di Sekitar & Sains Dasar",
+    "soal": "Perubahan wujud benda dari padat menjadi cair seperti es mencair disebut...",
+    "opsi": {
+      "A": "Membeku",
+      "B": "Mencair",
+      "C": "Menguap",
+      "D": "Menyublim"
+    },
+    "jawaban": "B",
+    "pembahasan": "Mencair (melebur) terjadi saat es padat menyerap panas sehingga berubah jadi air.",
+    "aliases": [
+      "mencair",
+      "melebur",
+      "b"
+    ]
+  },
+  {
+    "id": "umum_004",
+    "ronde": 11,
+    "kategori": "Benda di Sekitar & Sains Dasar",
+    "soal": "Alat optik yang digunakan untuk melihat benda-benda mikroskopis sangat kecil adalah...",
+    "opsi": {
+      "A": "Teleskop",
+      "B": "Mikroskop",
+      "C": "Periskop",
+      "D": "Lup"
+    },
+    "jawaban": "B",
+    "pembahasan": "Mikroskop menggunakan lensa perbesaran untuk meneliti bakteri dan sel mikroskopis.",
+    "aliases": [
+      "mikroskop",
+      "b"
+    ]
+  },
+  {
+    "id": "umum_005",
+    "ronde": 11,
+    "kategori": "Benda di Sekitar & Sains Dasar",
+    "soal": "Benda yang dapat menghantarkan panas dan listrik dengan baik disebut...",
+    "opsi": {
+      "A": "Isolator",
+      "B": "Konduktor",
+      "C": "Radiator",
+      "D": "Resistor"
+    },
+    "jawaban": "B",
+    "pembahasan": "Konduktor adalah penghantar yang baik seperti tembaga, besi, dan aluminium.",
+    "aliases": [
+      "konduktor",
+      "b"
+    ]
+  },
+  {
+    "id": "umum_006",
+    "ronde": 11,
+    "kategori": "Benda di Sekitar & Sains Dasar",
+    "soal": "Benda yang tidak dapat menghantarkan panas seperti kayu dan plastik disebut...",
+    "opsi": {
+      "A": "Konduktor",
+      "B": "Isolator",
+      "C": "Transistor",
+      "D": "Kondensator"
+    },
+    "jawaban": "B",
+    "pembahasan": "Isolator menahan panas atau aliran listrik, seperti karet, kain, dan kayu.",
+    "aliases": [
+      "isolator",
+      "b"
+    ]
+  },
+  {
+    "id": "umum_007",
+    "ronde": 11,
+    "kategori": "Benda di Sekitar & Sains Dasar",
+    "soal": "Kapur barus yang lama-kelamaan mengecil dan habis di lemari mengalami proses...",
+    "opsi": {
+      "A": "Menguap",
+      "B": "Menyublim",
+      "C": "Mencair",
+      "D": "Membeku"
+    },
+    "jawaban": "B",
+    "pembahasan": "Menyublim adalah perubahan wujud dari padat langsung menjadi gas.",
+    "aliases": [
+      "menyublim",
+      "sublim",
+      "b"
+    ]
+  },
+  {
+    "id": "umum_008",
+    "ronde": 11,
+    "kategori": "Benda di Sekitar & Sains Dasar",
+    "soal": "Alat navigasi penunjuk arah mata angin yang memanfaatkan jarum magnetik adalah...",
+    "opsi": {
+      "A": "Stopwatch",
+      "B": "Kompas",
+      "C": "Jangka sorong",
+      "D": "Spidometer"
+    },
+    "jawaban": "B",
+    "pembahasan": "Jarum kompas selalu menunjuk ke arah kutub utara dan selatan magnetik bumi.",
+    "aliases": [
+      "kompas",
+      "compass",
+      "b"
+    ]
+  },
+  {
+    "id": "umum_009",
+    "ronde": 11,
+    "kategori": "Benda di Sekitar & Sains Dasar",
+    "soal": "Titik beku air murni pada tekanan normal adalah...",
+    "opsi": {
+      "A": "100 derajat Celsius",
+      "B": "0 derajat Celsius",
+      "C": "-10 derajat Celsius",
+      "D": "50 derajat Celsius"
+    },
+    "jawaban": "B",
+    "pembahasan": "Air membeku pada suhu 0°C dan mendidih pada suhu 100°C.",
+    "aliases": [
+      "0 derajat celsius",
+      "0 derajat",
+      "0",
+      "b"
+    ]
+  },
+  {
+    "id": "umum_010",
+    "ronde": 11,
+    "kategori": "Benda di Sekitar & Sains Dasar",
+    "soal": "Cermin yang membuat bayangan tampak lebih besar seperti pada dokter gigi adalah...",
+    "opsi": {
+      "A": "Cermin datar",
+      "B": "Cermin cekung",
+      "C": "Cermin cembung",
+      "D": "Kaca rias"
+    },
+    "jawaban": "B",
+    "pembahasan": "Cermin cekung menghasilkan bayangan maya, tegak, dan diperbesar jika benda diletakkan dekat.",
+    "aliases": [
+      "cermin cekung",
+      "cekung",
+      "b"
+    ]
+  },
+  {
+    "id": "game_001",
+    "ronde": 12,
+    "kategori": "Permainan Tradisional & Olahraga",
+    "soal": "Permainan tradisional melompati petak-petak di tanah dengan satu kaki disebut...",
+    "opsi": {
+      "A": "Engklek",
+      "B": "Gasing",
+      "C": "Egrang",
+      "D": "Petak Umpet"
+    },
+    "jawaban": "A",
+    "pembahasan": "Engklek (sunda manda) dimainkan dengan melompati kotak-kotak berpola dengan satu kaki.",
+    "aliases": [
+      "engklek",
+      "sunda manda",
+      "a"
+    ]
+  },
+  {
+    "id": "game_002",
+    "ronde": 12,
+    "kategori": "Permainan Tradisional & Olahraga",
+    "soal": "Permainan berjalan di atas dua batang bambu tinggi berkaki pijak dinamakan...",
+    "opsi": {
+      "A": "Engklek",
+      "B": "Egrang",
+      "C": "Bakiak",
+      "D": "Congklak"
+    },
+    "jawaban": "B",
+    "pembahasan": "Egrang melatih keseimbangan tubuh dengan berjalan di atas galah bambu tinggi.",
+    "aliases": [
+      "egrang",
+      "b"
+    ]
+  },
+  {
+    "id": "game_003",
+    "ronde": 12,
+    "kategori": "Permainan Tradisional & Olahraga",
+    "soal": "Permainan tradisional membagi biji kerang ke dalam 16 lubang papan kayu disebut...",
+    "opsi": {
+      "A": "Biji karet",
+      "B": "Congklak",
+      "C": "Gundu",
+      "D": "Dam-daman"
+    },
+    "jawaban": "B",
+    "pembahasan": "Congklak (dakon) adalah permainan strategi berhitung dengan papan berlubang dan biji kerang.",
+    "aliases": [
+      "congklak",
+      "dakon",
+      "b"
+    ]
+  },
+  {
+    "id": "game_004",
+    "ronde": 12,
+    "kategori": "Permainan Tradisional & Olahraga",
+    "soal": "Permainan grup yang bertugas menjaga garis agar lawan tidak bisa lewat bolak-balik adalah...",
+    "opsi": {
+      "A": "Gobak Sodor",
+      "B": "Bentengan",
+      "C": "Petak Umpet",
+      "D": "Lompat Tali"
+    },
+    "jawaban": "A",
+    "pembahasan": "Gobak Sodor (Galasin) menguji kelincahan menembus penjagaan di atas garis berpetak.",
+    "aliases": [
+      "gobak sodor",
+      "galasin",
+      "a"
+    ]
+  },
+  {
+    "id": "game_005",
+    "ronde": 12,
+    "kategori": "Permainan Tradisional & Olahraga",
+    "soal": "Jumlah pemain dalam satu tim sepak bola di lapangan adalah...",
+    "opsi": {
+      "A": "9 orang",
+      "B": "11 orang",
+      "C": "10 orang",
+      "D": "12 orang"
+    },
+    "jawaban": "B",
+    "pembahasan": "Satu tim sepak bola terdiri dari 11 pemain (kesebelasan) termasuk seorang penjaga gawang.",
+    "aliases": [
+      "11 orang",
+      "11",
+      "b"
+    ]
+  },
+  {
+    "id": "game_006",
+    "ronde": 12,
+    "kategori": "Permainan Tradisional & Olahraga",
+    "soal": "Alat pukul yang digunakan dalam olahraga bulu tangkis disebut...",
+    "opsi": {
+      "A": "Tongkat",
+      "B": "Raket",
+      "C": "Bet",
+      "D": "Stik"
+    },
+    "jawaban": "B",
+    "pembahasan": "Raket digunakan untuk memukul shuttlecock (kok) dalam olahraga bulu tangkis/badminton.",
+    "aliases": [
+      "raket",
+      "racket",
+      "b"
+    ]
+  },
+  {
+    "id": "game_007",
+    "ronde": 12,
+    "kategori": "Permainan Tradisional & Olahraga",
+    "soal": "Induk organisasi bulu tangkis seluruh Indonesia bernama...",
+    "opsi": {
+      "A": "PSSI",
+      "B": "PBSI",
+      "C": "PERBASI",
+      "D": "PBVSI"
+    },
+    "jawaban": "B",
+    "pembahasan": "PBSI (Persatuan Bulu Tangkis Seluruh Indonesia) menaungi olahraga badminton nasional.",
+    "aliases": [
+      "pbsi",
+      "b"
+    ]
+  },
+  {
+    "id": "game_008",
+    "ronde": 12,
+    "kategori": "Permainan Tradisional & Olahraga",
+    "soal": "Benda bulat kecil dari kaca yang disentil untuk mengenai lawan dalam permainan tradisional disebut...",
+    "opsi": {
+      "A": "Gasing",
+      "B": "Kelereng / Gundu",
+      "C": "Yoyo",
+      "D": "Dadu"
+    },
+    "jawaban": "B",
+    "pembahasan": "Kelereng (gundu/keneker) adalah bola kaca kecil bening beraneka corak warna.",
+    "aliases": [
+      "kelereng",
+      "gundu",
+      "keneker",
+      "b"
+    ]
+  },
+  {
+    "id": "game_009",
+    "ronde": 12,
+    "kategori": "Permainan Tradisional & Olahraga",
+    "soal": "Seni bela diri asli warisan leluhur bangsa Indonesia yang mendunia adalah...",
+    "opsi": {
+      "A": "Karate",
+      "B": "Pencak Silat",
+      "C": "Taekwondo",
+      "D": "Judo"
+    },
+    "jawaban": "B",
+    "pembahasan": "Pencak Silat adalah seni bela diri tradisional asli Indonesia yang diakui UNESCO.",
+    "aliases": [
+      "pencak silat",
+      "silat",
+      "b"
+    ]
+  },
+  {
+    "id": "game_010",
+    "ronde": 12,
+    "kategori": "Permainan Tradisional & Olahraga",
+    "soal": "Olahraga lari jarak pendek dalam atletik disebut juga lari...",
+    "opsi": {
+      "A": "Maraton",
+      "B": "Sprint",
+      "C": "Estafet",
+      "D": "Cross country"
+    },
+    "jawaban": "B",
+    "pembahasan": "Lari sprint adalah nomor lari cepat jarak 60m, 100m, atau 200m.",
+    "aliases": [
+      "sprint",
+      "b"
+    ]
+  }
+]

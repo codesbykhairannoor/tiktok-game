@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Hall of Fame - Top Scorers CPNS 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #080d1a;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 30px;
+    }
+    .poster-canvas {
+      width: 720px;
+      background: radial-gradient(circle at 50% 10%, #1e1b4b 0%, #0f172a 60%, #080d1a 100%);
+      border: 4px solid #38bdf8;
+      border-radius: 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.85);
+      padding: 35px 30px;
+      color: #ffffff;
+      position: relative;
+    }
+    .header-banner {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .host-pill {
+      display: inline-block;
+      background: #f59e0b;
+      color: #0f172a;
+      font-weight: 900;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+    .sub-meta {
+      font-size: 15px;
+      color: #94a3b8;
+      margin-top: 6px;
+    }
+    .list-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .user-row {
+      display: flex;
+      align-items: center;
+      padding: 12px 18px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 2px solid rgba(255, 255, 255, 0.12);
+      transition: transform 0.2s;
+    }
+    .user-row.gold-row {
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.25) 0%, rgba(255, 255, 255, 0.08) 100%);
+      border-color: #f59e0b;
+    }
+    .user-row.silver-row {
+      background: linear-gradient(90deg, rgba(148, 163, 184, 0.25) 0%, rgba(255, 255, 255, 0.08) 100%);
+      border-color: #cbd5e1;
+    }
+    .user-row.bronze-row {
+      background: linear-gradient(90deg, rgba(217, 119, 6, 0.25) 0%, rgba(255, 255, 255, 0.08) 100%);
+      border-color: #d97706;
+    }
+    .rank-badge {
+      font-size: 26px;
+      font-weight: 900;
+      width: 45px;
+      text-align: center;
+    }
+    .user-info {
+      flex: 1;
+      margin-left: 10px;
+    }
+    .username {
+      font-size: 19px;
+      font-weight: 800;
+      color: #f8fafc;
+    }
+    .stats-sub {
+      font-size: 13px;
+      color: #94a3b8;
+      font-weight: 600;
+    }
+    .score-badge {
+      text-align: right;
+    }
+    .score-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      color: #f59e0b;
+    }
+    .score-label {
+      font-size: 12px;
+      font-weight: 800;
+      color: #94a3b8;
+      margin-left: 3px;
+    }
+    .footer-stamp {
+      margin-top: 25px;
+      text-align: center;
+      padding-top: 15px;
+      border-top: 2px dashed rgba(255, 255, 255, 0.15);
+      font-size: 14px;
+      color: #64748b;
+      font-weight: 700;
+    }
+    .btn-download {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #10b981;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 900;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
+      cursor: pointer;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <button class="btn-download" onclick="window.print()">🖨️ Cetak / Simpan PDF / Screenshot</button>
+  <div class="poster-canvas">
+    <div class="header-banner">
+      <div class="host-pill">🏆 OFFICIAL HALL OF FAME CPNS 2026</div>
+      <h1>TOP SCORERS LIVE SHOW</h1>
+      <div class="sub-meta">@spillsabi.id (maritumbuhbersama) • 10/11/2026, 15.02.50 WIB • 164 Peserta</div>
+    </div>
+    <div class="list-container">
+      
+      <div class="user-row gold-row">
+        <div class="rank-badge">🥇</div>
+        <div class="user-info">
+          <div class="username">@_ eRGie _</div>
+          <div class="stats-sub">36 Benar dari 39 Soal (92% Akurasi)</div>
+        </div>
+        <div class="score-badge">
+          <span class="score-num">1690</span>
+          <span class="score-label">PTS</span>
+        </div>
+      </div>
+    
+      <div class="user-row silver-row">
+        <div class="rank-badge">🥈</div>
+        <div class="user-info">
+          <div class="username">@Parbada</div>
+          <div class="stats-sub">29 Benar dari 34 Soal (85% Akurasi)</div>
+        </div>
+        <div class="score-badge">
+          <span class="score-num">1206</span>
+          <span class="score-label">PTS</span>
+        </div>
+      </div>
+    
+      <div class="user-row bronze-row">
+        <div class="rank-badge">🥉</div>
+        <div class="user-info">
+          <div class="username">@catfish sashimi</div>
+          <div class="stats-sub">26 Benar dari 28 Soal (93% Akurasi)</div>
+        </div>
+        <div class="score-badge">
+          <span class="score-num">1058</span>
+          <span class="score-label">PTS</span>
+        </div>
+      </div>
+    
+      <div class="user-row normal-row">
+        <div class="rank-badge">4</div>
+        <div class="user-info">
+          <div class="username">@secret</div>
+          <div class="stats-sub">25 Benar dari 28 Soal (89% Akurasi)</div>
+        </div>
+        <div class="score-badge">
+          <span class="score-num">983</span>
+          <span class="score-label">PTS</span>
+        </div>
+      </div>
+    
+      <div class="user-row normal-row">
+        <div class="rank-badge">5</div>
+        <div class="user-info">
+          <div class="username">@irham</div>
+          <div class="stats-sub">25 Benar dari 39 Soal (64% Akurasi)</div>
+        </div>
+        <div class="score-badge">
+          <span class="score-num">852</span>
+          <span class="score-label">PTS</span>
+        </div>
+      </div>
+    
+      <div class="user-row normal-row">
+        <div class="rank-badge">6</div>
+        <div class="user-info">
+          <div class="username">@vendy lioe</div>
+          <div class="stats-sub">15 Benar dari 19 Soal (79% Akurasi)</div>
+        </div>
+        <div class="score-badge">
+          <span class="score-num">605</span>
+          <span class="score-label">PTS</span>
+        </div>
+      </div>
+    
+      <div class="user-row normal-row">
+        <div class="rank-badge">7</div>
+        <div class="user-info">
+          <div class="username">@hranoona</div>
+          <div class="stats-sub">13 Benar dari 13 Soal (100% Akurasi)</div>
+        </div>
+        <div class="score-badge">
+          <span class="score-num">552</span>
+          <span class="score-label">PTS</span>
+        </div>
+      </div>
+    
+      <div class="user-row normal-row">
+        <div class="rank-badge">8</div>
+        <div class="user-info">
+          <div class="username">@Kel</div>
+          <div class="stats-sub">14 Benar dari 23 Soal (61% Akurasi)</div>
+        </div>
+        <div class="score-badge">
+          <span class="score-num">418</span>
+          <span class="score-label">PTS</span>
+        </div>
+      </div>
+    
+      <div class="user-row normal-row">
+        <div class="rank-badge">9</div>
+        <div class="user-info">
+          <div class="username">@MI'INK</div>
+          <div class="stats-sub">8 Benar dari 18 Soal (44% Akurasi)</div>
+        </div>
+        <div class="score-badge">
+          <span class="score-num">341</span>
+          <span class="score-label">PTS</span>
+        </div>
+      </div>
+    
+      <div class="user-row normal-row">
+        <div class="rank-badge">10</div>
+        <div class="user-info">
+          <div class="username">@👻👻👻</div>
+          <div class="stats-sub">7 Benar dari 11 Soal (64% Akurasi)</div>
+        </div>
+        <div class="score-badge">
+          <span class="score-num">266</span>
+          <span class="score-label">PTS</span>
+        </div>
+      </div>
+    
+    </div>
+    <div class="footer-stamp">
+      🎯 Simulasi Tryout Resmi CAT SKD CPNS 2026 • 100% Murni Prestasi & Akurasi
+    </div>
+  </div>
+</body>
+</html>

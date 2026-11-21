@@ -1,0 +1,26 @@
+{
+  "port": 3004,
+  "tiktokUsername": "spillsabi.id",
+  "vtuberName": "Mika",
+  "voice": "ja-JP-NanamiNeural",
+  "voicePitch": "+8Hz",
+  "voiceRate": "+4%",
+  "throne": {
+    "title": "👑 SINGGASANA SULTAN MIKA",
+    "initialKing": "Sultan Pertama",
+    "minCoinsToUsurp": 5,
+    "pointsPerSecond": 10
+  },
+  "roseGoalTarget": 100,
+  "chat": {
+    "enabled": true,
+    "cooldownMs": 6000,
+    "maxCommentLength": 55,
+    "readMode": "smart",
+    "filterProfanity": true
+  },
+  "concert": {
+    "enabled": true,
+    "minCoinsToSing": 20
+  }
+}

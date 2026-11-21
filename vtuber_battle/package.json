@@ -1,0 +1,9 @@
+{
+  "name": "vtuber-battle",
+  "version": "1.0.0",
+  "description": "Mika AI VTuber x Singgasana Sultan (King of the Hill) Live Stream",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

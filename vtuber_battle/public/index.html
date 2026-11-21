@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👑 Mika VTuber x Singgasana Sultan (King of the Hill)</title>
+    <link rel="stylesheet" href="/css/style.css?v=5">
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "/vendor/three/build/three.module.min.js",
+        "three/addons/": "/vendor/three/examples/jsm/",
+        "@pixiv/three-vrm": "/vendor/three-vrm/lib/three-vrm.module.min.js",
+        "@pixiv/three-vrm-animation": "/vendor/three-vrm-animation/lib/three-vrm-animation.module.min.js"
+      }
+    }
+    </script>
+</head>
+
+<body>
+
+    <div class="stream-viewport" id="stream-viewport">
+
+        <!-- =========================================================
+             BAGIAN ATAS (1080 x 960): MIKA 3D VTUBER STUDIO
+             ========================================================= -->
+        <div class="top-vtuber-section">
+            <!-- Cozy Anime Room Background -->
+            <div class="room-background">
+                <img src="/images/room-bg.jpg" alt="Cozy Anime Room" class="room-bg-img">
+                <div class="room-soft-vignette"></div>
+            </div>
+
+            <canvas id="vrm-canvas" width="1080" height="960"></canvas>
+
+            <!-- Loading Indicator Mika 3D -->
+            <div class="vrm-loading" id="vrm-loading">
+                <span class="spinner">🌸</span>
+                <span id="vrm-loading-text">Memuat Mika 3D...</span>
+            </div>
+
+            <div class="vtuber-header-overlay">
+                <div class="sasha-badge">
+                    <div class="dot"></div>
+                    <div class="text">MIKA 3D LIVE</div>
+                </div>
+                <div class="role-badge">
+                    <span>👑 Selir Setia Sang Raja</span>
+                </div>
+            </div>
+
+            <!-- Widget Live Chat Ticker (Komentar TikTok Live Realtime) -->
+            <div class="live-chat-container" id="live-chat-container">
+                <div class="live-chat-header">
+                    <span class="live-chat-pulse"></span>
+                    <span>💬 KOMENTAR LIVE TIKTOK</span>
+                </div>
+                <div class="live-chat-list" id="live-chat-list">
+                    <!-- Komentar penonton muncul di sini secara halus -->
+                </div>
+            </div>
+
+            <!-- Konser Spesial Mika Overlay (Lampu Panggung, Not Musik, & Karaoke Card) -->
+            <div class="concert-overlay" id="concert-overlay">
+                <div class="concert-spotlight spotlight-left"></div>
+                <div class="concert-spotlight spotlight-right"></div>
+                <div class="concert-floating-notes" id="concert-notes"></div>
+
+                <div class="concert-banner-card" id="concert-banner-card">
+                    <div class="concert-badge-live">🎤 MIKA LIVE CONCERT 🎶</div>
+                    <div class="concert-song-title" id="concert-song-title">Kawaikute Gomen (HoneyWorks)</div>
+                    <div class="concert-donor-line" id="concert-donor-line">Persembahan Spesial untuk: <span
+                            id="concert-donor-name">Sultan_Budi</span></div>
+                    <div class="concert-lyrics-box" id="concert-lyrics-box">
+                        <span class="concert-note-icon">🎵</span>
+                        <span id="concert-lyrics-text">Chu! Kawaikute gomen! 💕 Umarete kichatte gomen! ✨</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="speech-bubble-container" id="speech-bubble-container">
+                <div class="speech-bubble">
+                    <div class="speech-speaker">✨ Mika:</div>
+                    <div class="speech-text" id="speech-text">Selamat datang di Singgasana Sultan! Siapa yang berani
+                        rebut tahta malam ini?!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =========================================================
+             BAGIAN BAWAH (1080 x 960): SINGGASANA SULTAN (ARENA)
+             ========================================================= -->
+        <div class="bottom-battle-section" id="bottom-battle-section">
+            <div class="divider-banner">
+                <div class="divider-title">⚔️ SINGGASANA SULTAN TIKTOK LIVE ⚔️</div>
+            </div>
+
+            <!-- Bar Progres Target Mawar (Pesta Mika) -->
+            <div class="rose-goal-section">
+                <div class="rose-goal-header">
+                    <div class="rose-goal-title">
+                        <span class="rose-icon-spin">🌹</span>
+                        <span>TARGET PESTA MAWAR MIKA</span>
+                        <span class="rose-badge-reward">🎉 REWARD: MIKA JOGET!</span>
+                    </div>
+                    <div class="rose-goal-counts">
+                        <span id="rose-current-count">0</span> / <span id="rose-target-count">100</span>
+                        <span class="rose-pct-pill" id="rose-pct-pill">0%</span>
+                    </div>
+                </div>
+                <div class="rose-progress-track">
+                    <div class="rose-progress-fill" id="rose-progress-fill" style="width: 0%;">
+                        <div class="rose-progress-shimmer"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="throne-stage">
+                <div class="throne-chair-bg">🪑</div>
+                <div class="floating-crown">👑</div>
+
+                <!-- Kartu Raja Saat Ini -->
+                <div class="king-throne-card" id="king-throne-card">
+                    <div class="king-avatar-wrap">
+                        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=SultanPertama" alt="Raja"
+                            class="king-avatar" id="king-avatar">
+                    </div>
+                    <div class="king-label">⚜️ RAJA SAAT INI ⚜️</div>
+                    <div class="king-name" id="king-name">Sultan Pertama</div>
+                    <div class="king-timer-badge">
+                        <span>⏱️ Berkuasa:</span>
+                        <strong id="king-timer">00:00</strong>
+                    </div>
+                </div>
+
+                <!-- Barisan 4 Kursi Pengawal Mawar (Tempat Nongkrong) -->
+                <div class="rose-guards-section">
+                    <div class="guards-title">
+                        <span>🌹 BARISAN PENGAWAL MAWAR (NONGKRONG DI SINI) 🌹</span>
+                    </div>
+                    <div class="guards-grid" id="guards-grid">
+                        <!-- Slot 1: Jenderal Mawar -->
+                        <div class="guard-card guard-rank-1 empty" id="guard-slot-1">
+                            <div class="guard-rank-badge">👑 #1</div>
+                            <div class="guard-avatar-wrap">
+                                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=kosong1" alt="Guard 1"
+                                    class="guard-avatar">
+                            </div>
+                            <div class="guard-info">
+                                <div class="guard-name">Kosong</div>
+                                <div class="guard-roses">🌹 0 Mawar</div>
+                            </div>
+                        </div>
+                        <!-- Slot 2: Letnan Mawar -->
+                        <div class="guard-card guard-rank-2 empty" id="guard-slot-2">
+                            <div class="guard-rank-badge">🌹 #2</div>
+                            <div class="guard-avatar-wrap">
+                                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=kosong2" alt="Guard 2"
+                                    class="guard-avatar">
+                            </div>
+                            <div class="guard-info">
+                                <div class="guard-name">Kosong</div>
+                                <div class="guard-roses">🌹 0 Mawar</div>
+                            </div>
+                        </div>
+                        <!-- Slot 3: Pengawal Kanan -->
+                        <div class="guard-card guard-rank-3 empty" id="guard-slot-3">
+                            <div class="guard-rank-badge">🌹 #3</div>
+                            <div class="guard-avatar-wrap">
+                                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=kosong3" alt="Guard 3"
+                                    class="guard-avatar">
+                            </div>
+                            <div class="guard-info">
+                                <div class="guard-name">Kosong</div>
+                                <div class="guard-roses">🌹 0 Mawar</div>
+                            </div>
+                        </div>
+                        <!-- Slot 4: Pengawal Kiri -->
+                        <div class="guard-card guard-rank-4 empty" id="guard-slot-4">
+                            <div class="guard-rank-badge">🌹 #4</div>
+                            <div class="guard-avatar-wrap">
+                                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=kosong4" alt="Guard 4"
+                                    class="guard-avatar">
+                            </div>
+                            <div class="guard-info">
+                                <div class="guard-name">Kosong</div>
+                                <div class="guard-roses">🌹 0 Mawar</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Petunjuk Rebut Tahta & Nongkrong Mawar -->
+                <div class="throne-cta-bar">
+                    <div class="icon">🎁</div>
+                    <div class="text">Kirim <strong>1 Mawar</strong> = Nongkrong di Kursi Pengawal | Kirim <strong>Donat
+                            / Paus (5+ Koin)</strong> = TENDANG RAJA &amp; Rebut Mika!</div>
+                </div>
+            </div>
+
+            <!-- Hall of Fame (Kiri Bawah) -->
+            <div class="hall-of-fame">
+                <div class="hof-title">🏆 Top Sultan Penakluk</div>
+                <div class="hof-list" id="hof-list">
+                    <div class="hof-item">
+                        <div><span class="rank">#1</span><span>Sultan Pertama</span></div>
+                        <span class="duration">00:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Gift Ticker Toasts (Kanan Bawah) -->
+            <div class="gift-toast-container" id="gift-toast-container"></div>
+
+            <!-- Partikel Mawar Melayang -->
+            <div class="floating-roses-container" id="floating-roses-container"></div>
+
+            <!-- Overlay Pesta Mawar Spesial -->
+            <div class="party-celebration-overlay" id="party-celebration-overlay">
+                <div class="party-box">
+                    <div class="party-confetti">🎉 🌹 👑 🌹 🎉</div>
+                    <div class="party-title">PESTA MAWAR TERCAPAI!</div>
+                    <div class="party-mvp" id="party-mvp-text">MVP: Sultan_Budi</div>
+                    <div class="party-sub">MIKA SEDANG JOGET MERIAH! 💃✨</div>
+                </div>
+            </div>
+
+            <!-- Overlay Animasi Flying Kick -->
+            <div class="kick-animation-overlay" id="kick-animation-overlay">
+                <div class="challenger-kicker">
+                    <img src="" alt="Kicker" id="kicker-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Banner Unlock Audio WebAudio (Floating Pill, Non-blocking) -->
+        <div id="audio-unlock-overlay">
+            <span>🔊 Klik di mana saja untuk mengaktifkan Suara Mika &amp; SFX ✨</span>
+        </div>
+
+    </div>
+
+    <audio id="speech-player" preload="auto"></audio>
+    <audio id="music-player" preload="auto"></audio>
+    <audio id="audio-player" preload="auto"></audio>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="/js/vrm-engine.js?v=5"></script>
+    <script src="/js/battle-overlay.js?v=5"></script>
+</body>
+
+</html>

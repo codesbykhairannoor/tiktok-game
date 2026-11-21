@@ -1,0 +1,23 @@
+﻿# Dependencies
+node_modules/
+*/node_modules/
+*/*/node_modules/
+
+# Logs & Temp
+*.log
+*.tmp
+.chrome_debug_temp*
+temp_*
+test_*
+debug_*.js
+scratch_*.js
+*.jpg
+
+# Large Models & Binaries (>50MB)
+models_tts/
+ai_vtuber/models_tts/
+
+# Env & Secrets
+.env
+.env.*
+!.env.example
